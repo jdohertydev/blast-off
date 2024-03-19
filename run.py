@@ -120,7 +120,7 @@ def game_start(name):
             clear_screen()  
             break
         else:
-            print(f"We need a yes or no answer, Commander {name}. ")
+            typing_print(f"We need a yes or no answer, Commander {name}. ")
 
 def choose_difficulty(name):
     """
@@ -129,7 +129,16 @@ def choose_difficulty(name):
     The word register will change in difficulty e.g. easy = moon, hard = constellation
 
     """
-    print("test")
+    typing_print(f"OK, Commander {name}. We need you to choose your astronaut level. ")
+
+    while True:
+        level = typing_input("Are you a Junior, Senior, or Chief? ").lower()
+
+        if level == 'junior' or level == 'senior' or level == 'chief':
+            typing_print(f"{level} astronaut!")
+            break
+        else:
+            typing_print(f"We need your answer, Commander {name}. ")
 
 initiate_game()
 name = validate_name()
