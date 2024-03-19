@@ -5,6 +5,7 @@ import time,sys
 import os
 
 import constants
+# from constants import word_list
 
 def typing_print(text):
     """
@@ -142,18 +143,35 @@ def choose_difficulty(name):
         else:
             typing_print(f"We need your answer, Commander {name}. ")
 
-def play_game(level):
+def get_word():
+    """
+    Randomly selects word from wordlist
+    
+    """
+    word = random.choice(constants.word_list)
+    return word.upper()
+
+def play_game(word):
     """
     Word is selected from wordlist.
 
-    """
+    """   
 
-    print(level)
+    word_completion = "＿" * len(word)
+    guessed = False
+    guessed_letters = []
+    guessed_words = []
+    tries = 6
 
+    # print(level)
+    print("Introduce game")
+    
 initiate_game()
 name = validate_name()
 validate_plants(name)
 game_start(name)
 level = choose_difficulty(name)
-play_game(level)
+
+word = get_word()
+play_game(word)
 
