@@ -132,16 +132,28 @@ def choose_difficulty(name):
     typing_print(f"OK, Commander {name}. We need you to choose your astronaut level. ")
 
     while True:
-        level = typing_input("Are you a Junior, Senior, or Chief? ").lower()
+        level = typing_input("Are you a Junior, Senior, or Chief? ").capitalize()
 
-        if level == 'junior' or level == 'senior' or level == 'chief':
-            typing_print(f"{level} astronaut!")
-            break
+        if level == 'Junior' or level == 'Senior' or level == 'Chief':
+            typing_print(f"Great, we'll start the mission as a {level} astronaut!")
+            time.sleep(2)
+            clear_screen()
+            return level
         else:
             typing_print(f"We need your answer, Commander {name}. ")
+
+def play_game(level):
+    """
+    Word is selected from wordlist.
+
+    """
+
+    print(level)
 
 initiate_game()
 name = validate_name()
 validate_plants(name)
 game_start(name)
-choose_difficulty(name)
+level = choose_difficulty(name)
+play_game(level)
+
