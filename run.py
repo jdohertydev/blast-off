@@ -7,6 +7,9 @@ import os
 def typing_print(text):
     """
     https://www.101computing.net/python-typing-text-effect/
+
+    Creates a typing effect to improve user experience.
+
     """
     for character in text:
         sys.stdout.write(character)
@@ -16,6 +19,8 @@ def typing_print(text):
 def typing_input(text):
     """
     https://www.101computing.net/python-typing-text-effect/
+
+    Creates a typing effect to improve user experience.
 
     """
     for character in text:
@@ -28,6 +33,8 @@ def typing_input(text):
 def clear_screen():
     """
     https://www.101computing.net/python-typing-text-effect/
+
+    Clears user's screen improve user experience.
 
     """
     os.system("clear")
