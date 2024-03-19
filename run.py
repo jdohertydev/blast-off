@@ -153,7 +153,9 @@ def get_word():
 
 def play_game(word):
     """
-    Word is selected from wordlist.
+    Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
+    Word is selected randomly from wordlist.
+    User has to guess letters or word within 6 turns.
 
     """   
 
