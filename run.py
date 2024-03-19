@@ -25,7 +25,7 @@ def typing_input(text):
     value = input()  
     return value
 
-def clearScreen():
+def clear_screen():
     """
     https://www.101computing.net/python-typing-text-effect/
 
