@@ -29,17 +29,20 @@ def validate_name():
 
 def validate_plants(name):
     """
-    Validates user's answer is a number.
+    Validates user's answer is a digit.
     
     """
+    while True:
+        try:
+            plant_number = int(input("How many planets are there in our Solar System? "))
 
-    plant_number = int(input("How many planets are there in our Solar System? "))
-
-    if plant_number == 9 or plant_number == "nine" or plant_number == "Nine":
-        print(f"\nWell done! You know your stuff, Commander {name}. It's time to commence the mission!")
-    else:
-        print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again.")
-
+            if plant_number == 9:
+                print(f"\nWell done! You know your stuff, Commander {name}. It's time to commence the mission!")
+                break
+            else:
+                print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again.")
+        except ValueError:
+            print(f"Please enter a number as a digit, e.g. 1, Commander {name}.")  
  
 initiate_game()
 name = validate_name()
