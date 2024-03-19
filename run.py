@@ -4,6 +4,8 @@ import random
 import time,sys
 import os
 
+import constants
+
 def typing_print(text):
     """
     https://www.101computing.net/python-typing-text-effect/
@@ -84,21 +86,42 @@ def validate_plants(name):
                 time.sleep(1)
                 typing_print("1...")
                 time.sleep(1)
+                clear_screen()
                 break
             else:
                 typing_print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again. ")
         except ValueError:
             typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")  
  
-def game_start():
+def game_start(name):
     """
     Explains rules of the game
     Player selects level of difficulty
     
     """
-    print("test")
+    print(constants.instructions)
+    
+    while True:
+        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}? ").lower()
+
+        if answer == 'yes':
+            typing_print("Great, let's get you spacesuited up!")
+            clear_screen()
+            break
+        elif answer == 'no': 
+            typing_print("That is a shame. Thanks for your time but this is where we go our separate ways.")
+            typing_print(f"Goodbye, Commander {name}. This message will self-destruct in 3...")
+            time.sleep(1)
+            typing_print("2...")
+            time.sleep(1)
+            typing_print("1...")
+            time.sleep(1)
+            clear_screen()  
+            break
+        else:
+            print(f"We need a yes or no answer, Commander {name}. ")
 
 initiate_game()
 name = validate_name()
 validate_plants(name)
-game_start()
+game_start(name)
