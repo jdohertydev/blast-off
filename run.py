@@ -5,7 +5,6 @@ import random
 def initiate_game():
     """
     Initiates the game.
-    Ensures user enters a valid name and answers a basic question before main game starts.
 
     """
 
@@ -13,6 +12,11 @@ def initiate_game():
     print("You have been selected for a very special mission. Before we tell you more...\n")
 
 def validate_name(): 
+    """
+    Ensures user enters a valid name.
+
+    """
+    
     while True:
         name = input("What is your name? ")
         try:
@@ -24,6 +28,10 @@ def validate_name():
             return name            
 
 def validate_plants(name):
+    """
+    Validates user's answer is a number.
+    
+    """
 
     plant_number = int(input("How many planets are there in our Solar System? "))
 
