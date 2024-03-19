@@ -77,24 +77,31 @@ def validate_plants(name):
             plant_number = int(typing_input("How many planets are there in our Solar System? "))
 
             if plant_number == 9:
-                typing_print(f"\nWell done! You know your stuff, Commander {name}. Your mission will commence in 5..")
+                typing_print(f"\nWell done! You know your stuff, Commander {name}. Your mission will commence in 5...")
                 time.sleep(1)
-                typing_print("4..")
+                typing_print("4...")
                 time.sleep(1)
-                typing_print("3..")
+                typing_print("3...")
                 time.sleep(1)
-                typing_print("2..")
+                typing_print("2...")
                 time.sleep(1)
-                typing_print("1..")
+                typing_print("1...")
                 time.sleep(1)
-                clear_screen()
                 break
             else:
                 typing_print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again. ")
         except ValueError:
             typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")  
  
+def game_start():
+    """
+    Explains rules of the game
+    Player selects level of difficulty
+    
+    """
+    print("test")
 
 initiate_game()
 name = validate_name()
 validate_plants(name)
+game_start()
