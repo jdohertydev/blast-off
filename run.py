@@ -165,12 +165,61 @@ def play_game(word):
 
     # print(level)
     print("Introduce game")
+    print(word)
+    print(constants.display_rocket(tries))
+    print(word_completion)
+    print("\n")
+
+    while not guessed and tries > 0:
+        guess = input("Please guess a letter or word ").upper()
+        clear_screen() 
+        
+        if len(guess) == 1 and guess.isalpha():
+            if guess in guessed_letters:
+                print(f"You already tried this letter! {guess}")
+            elif guess not in word:
+                print(f"{guess} is not in the word") 
+                tries -= 1
+                guessed_letters.append(guess)
+            else:
+                print(f"Good job {guess} is in the word!")
+                guessed_letters.append(guess)  
+                # Update word_completion with the guessed letter
+                word_completion = ''.join([guess if letter == guess else word_completion[i] for i, letter in enumerate(word)])
+            
+        elif len(guess) == len(word) and guess.isalpha():
+            if guess in guessed_words:
+                print(f"You already guessed the word {guess}")
+            elif guess != word:
+                print(f"{guess} is not the word.")
+                tries -= 1
+                guessed_words.append(guess)
+            else:
+                guessed = True
+                word_completion = word
+        else:
+            print("Not a valid guess.")
+        
+        print(constants.display_rocket(tries))
+        print(word_completion)
+        print("\n")
+
+    if guessed:
+        print("Congrats, you guessed the word! You win!")
+    else:
+        print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
+
+
+
+
+
+
     
-initiate_game()
-name = validate_name()
-validate_plants(name)
-game_start(name)
-level = choose_difficulty(name)
+# initiate_game()
+# name = validate_name()
+# validate_plants(name)
+# game_start(name)
+# level = choose_difficulty(name)
 
 word = get_word()
 play_game(word)
