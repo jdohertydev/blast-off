@@ -1,6 +1,33 @@
 #Import the random module
 
 import random
+import time,sys
+import os
+
+def typingPrint(text):
+    """
+
+    """
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+  
+def typingInput(text):
+    """
+
+    """
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+        value = input()  
+        return value
+
+def clearScreen():
+    """
+    """
+    os.system("clear")
 
 def initiate_game():
     """
@@ -16,14 +43,15 @@ def validate_name():
     Ensures user enters a valid name.
 
     """
-    
     while True:
         name = input("What is your name? ")
+
         try:
             int(name)
-            print(f"{name} isn't a name on our VIP list, try again.")            
+            print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")            
             
         except ValueError:
+            name = name.capitalize()
             print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question...\n")
             return name            
 
