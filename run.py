@@ -54,7 +54,10 @@ def validate_name():
     """
     while True:
         name = typing_input("What is your name? ")
-
+        
+        if not name.strip():  # Check if the input is empty or contains only whitespace
+            typing_print("We need a valid name, Commander. ")
+            continue
         try:
             int(name)
             typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")            
@@ -77,9 +80,9 @@ def validate_plants(name):
                 typing_print(f"\nWell done! You know your stuff, Commander {name}. It's time to commence the mission!")
                 break
             else:
-                typing_print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again.")
+                typing_print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again. ")
         except ValueError:
-            typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}.")  
+            typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")  
  
 initiate_game()
 name = validate_name()
