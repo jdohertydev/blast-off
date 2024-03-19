@@ -106,6 +106,7 @@ def game_start(name):
 
         if answer == 'yes':
             typing_print("Great, let's get you spacesuited up!")
+            time.sleep(2)
             clear_screen()
             break
         elif answer == 'no': 
@@ -121,7 +122,17 @@ def game_start(name):
         else:
             print(f"We need a yes or no answer, Commander {name}. ")
 
+def choose_difficulty(name):
+    """
+    The user chooses level of difficulty.
+    Easy, medium or hard.
+    The word register will change in difficulty e.g. easy = moon, hard = constellation
+
+    """
+    print("test")
+
 initiate_game()
 name = validate_name()
 validate_plants(name)
 game_start(name)
+choose_difficulty(name)
