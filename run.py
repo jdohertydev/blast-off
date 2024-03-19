@@ -1,11 +1,11 @@
-#Import the random module
+# Import the random module for random word selction
+# Import time, sys and os for typing effect and clear
+# Import constants to get random words and ASCII images
 
 import random
 import time,sys
 import os
-
 import constants
-# from constants import word_list
 
 def typing_print(text):
     """
@@ -211,12 +211,7 @@ def play_game(word):
     else:
         print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
 
-
-
-
-
-
-    
+   
 # initiate_game()
 # name = validate_name()
 # validate_plants(name)
@@ -225,4 +220,3 @@ def play_game(word):
 
 word = get_word()
 play_game(word)
-
