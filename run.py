@@ -67,7 +67,7 @@ def validate_name():
             typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question...\n")
             return name            
 
-def validate_plants(name):
+def validate_planets(name):
     """
     Validates that the answer is a digit.
     
@@ -249,7 +249,7 @@ def exit_game(name):
 
 initiate_game()
 name = validate_name()
-validate_plants(name)
+validate_planets(name)
 game_start(name)
 level = choose_difficulty(name)
 word = get_word(level)
