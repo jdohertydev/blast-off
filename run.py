@@ -184,28 +184,28 @@ def play_game(word, level, score=0):
         clear_screen()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                typing_print(f"You already tried this letter! {guess}")
+                print(f"You already tried this letter! {guess}")
             elif guess not in word:
-                typing_print(f"{guess} is not in the word!") 
+                print(f"{guess} is not in the word!") 
                 tries -= 1
                 guessed_letters.append(guess)
             else:
-                typing_print(f"Good job {guess} is in the word!")
+                print(f"Good job {guess} is in the word!")
                 guessed_letters.append(guess)
                 word_completion = ''.join([guess if letter == guess else word_completion[i] for i, letter in enumerate(word)])
             
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                typing_print(f"You already guessed the word {guess}")
+                print(f"You already guessed the word {guess}")
             elif guess != word:
-                typing_print(f"{guess} is not the word.")
+                print(f"{guess} is not the word.")
                 tries -= 1
                 guessed_words.append(guess)
             else:
                 guessed = True
                 word_completion = word
         else:
-            typing_print("Not a valid guess.")
+            print("Not a valid guess.")
         
         
         
@@ -216,13 +216,13 @@ def play_game(word, level, score=0):
         print("\n")
 
     if guessed:
-        typing_print("Congrats, you guessed the word and made the mission! You get a point!")
+        typing_print("Congrats, you guessed the word and made the mission! You get a point! ")
         score +=1
     else:
         print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
 
     while True:
-        answer = typing_input("Do you want to play again? (yes/no): ").strip().lower()
+        answer = typing_input("Do you want to play again? ").strip().lower()
         if answer == 'yes':
             clear_screen() 
             return play_game(word, level, score) 
