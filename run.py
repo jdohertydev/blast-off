@@ -215,10 +215,10 @@ def play_game(word, level, score=0):
         print("\n")
 
     if guessed:
-        print("Congrats, you guessed the word! You get a point!")
+        print("Congrats, you guessed the word and made the mission! You get a point!")
         score +=1
     else:
-        print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
+        print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
 
     while True:
         answer = input("Do you want to play again? (yes/no): ").strip().lower()
