@@ -1,7 +1,12 @@
-word_list = [
-    "test",
-    "hello",
-    "goodbye"
+word_list_easy = [
+    "easy"
+    ]
+
+word_list_medium = [
+    "medium"]
+
+word_list_hard = [
+    "hard"
 ]
 
 instructions ="""

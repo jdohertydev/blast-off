@@ -143,12 +143,21 @@ def choose_difficulty(name):
         else:
             typing_print(f"We need your answer, Commander {name}. ")
 
-def get_word():
+def get_word(level):
     """
     Randomly selects word from wordlist
+    The word selected depends on level choosen
     
     """
-    word = random.choice(constants.word_list)
+    if level == "Junior":
+        word = random.choice(constants.word_list_easy)
+    elif level == "Senior":
+        word = random.choice(constants.word_list_medium)
+    elif level == "Chief":
+        word = random.choice(constants.word_list_hard)
+    else:
+        print("Something went wrong")
+        
     return word.upper()
 
 def play_game(word):
