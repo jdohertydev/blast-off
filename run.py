@@ -162,7 +162,7 @@ def get_word(level):
     word = random.choice(word_list) 
     return word.upper()
 
-def play_game(word):
+def play_game(word, level, score=0):
     """
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
     Word is selected randomly from wordlist.
@@ -176,9 +176,9 @@ def play_game(word):
     guessed_words = []
     tries = 6
 
-    # print(level)
     print("Introduce game")
-    print(word)
+    print(f"Game Mode: {level}")
+    print(f"Current Score: {score}")
     print(constants.display_rocket(tries))
     print(word_completion)
     print("\n")
@@ -196,8 +196,7 @@ def play_game(word):
                 guessed_letters.append(guess)
             else:
                 print(f"Good job {guess} is in the word!")
-                guessed_letters.append(guess)  
-                # Update word_completion with the guessed letter
+                guessed_letters.append(guess)
                 word_completion = ''.join([guess if letter == guess else word_completion[i] for i, letter in enumerate(word)])
             
         elif len(guess) == len(word) and guess.isalpha():
@@ -213,16 +212,31 @@ def play_game(word):
         else:
             print("Not a valid guess.")
         
+        print("Introduce game")
+        print(f"Game Mode: {level}")
+        print(f"Current Score {score}")
         print(constants.display_rocket(tries))
         print(word_completion)
         print("\n")
 
     if guessed:
         print("Congrats, you guessed the word! You win!")
+        score +=1
     else:
         print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
 
-   
+    while True:
+        answer = input("Do you want to play again? (yes/no): ").strip().lower()
+        if answer == 'yes':
+            clear_screen() 
+            play_game(word, level, score)
+        elif answer == 'no':
+            return False
+        else:
+            print("Please enter 'yes' or 'no'.")
+
+
+
 initiate_game()
 name = validate_name()
 validate_plants(name)
@@ -230,4 +244,4 @@ game_start(name)
 level = choose_difficulty(name)
 
 word = get_word(level)
-play_game(word)
+play_game(word, level)

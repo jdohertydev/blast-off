@@ -18,6 +18,7 @@ instructions ="""
 |                                                            |
 | * Choose your level of difficulty (easy, medium, or hard). |
 | * You have 6 opportunities to guess.                       |
+| * You get one point if you guess the word correctly        |
 | * The number of spaces represents the word length.         |
 | * You can either select letters or guess the word outright.|
 | * If after 6 turns you don't guess correctly, the mission  |
