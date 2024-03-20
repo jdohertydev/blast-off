@@ -145,19 +145,21 @@ def choose_difficulty(name):
 
 def get_word(level):
     """
-    Randomly selects word from wordlist
-    The word selected depends on level choosen
+    Randomly selects word from wordlist.
+    The word selected depends on level choosen.
     
     """
     if level == "Junior":
-        word = random.choice(constants.word_list_easy)
+        word_list = constants.word_list_easy
     elif level == "Senior":
-        word = random.choice(constants.word_list_medium)
+        word_list = constants.word_list_medium
     elif level == "Chief":
-        word = random.choice(constants.word_list_hard)
+        word_list = constants.word_list_hard
     else:
-        print("Something went wrong")
-        
+        print("Invalid difficulty level provided.")
+        return None
+
+    word = random.choice(word_list) 
     return word.upper()
 
 def play_game(word):
@@ -221,11 +223,11 @@ def play_game(word):
         print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
 
    
-# initiate_game()
-# name = validate_name()
-# validate_plants(name)
-# game_start(name)
-# level = choose_difficulty(name)
+initiate_game()
+name = validate_name()
+validate_plants(name)
+game_start(name)
+level = choose_difficulty(name)
 
-word = get_word()
+word = get_word(level)
 play_game(word)
