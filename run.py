@@ -186,7 +186,7 @@ def play_game(word, level, score=0):
             if guess in guessed_letters:
                 print(f"You already tried this letter! {guess}")
             elif guess not in word:
-                print(f"{guess} is not in the word") 
+                print(f"{guess} is not in the word!") 
                 tries -= 1
                 guessed_letters.append(guess)
             else:
