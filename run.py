@@ -178,7 +178,6 @@ def play_game(word, level, score=0):
         
         guess = input("Please guess a letter or word or type ABORT to end the mission. ").upper()
 
-
         if guess == "ABORT":
             clear_screen()
             return exit_game(name)            
@@ -228,6 +227,7 @@ def play_game(word, level, score=0):
             clear_screen() 
             return play_game(word, level, score) 
         elif answer == 'no':
+            clear_screen()
             exit_game(name)  
             return score  
         else:
