@@ -160,28 +160,29 @@ def play_game(word, level, score=0):
     Word is selected randomly from wordlist.
     User has to guess letters or word within 6 turns.
     """   
-
+    print(f"Game Mode: {level}")
+    print(f"Current Score: {score}")
+    
     word_completion = "＿" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
     tries = 6
 
-    print("Introduce game")
-    print(f"Game Mode: {level}")
-    print(f"Current Score: {score}")
-    print(constants.display_rocket(tries))
-    print(word_completion)
-    print("\n")
-
     while not guessed and tries > 0:
+        clear_screen()  # Clear the screen before printing the game status
+        print(f"Game Mode: {level}")
+        print(f"Current Score: {score}")
+        print(constants.display_rocket(tries))
+        print(word_completion)
+        print("\n")
+
         guess = input("Please guess a letter or word or type ABORT to end mission ").upper()
-        clear_screen() 
 
         if guess == "ABORT":
             clear_screen()
             return exit_game(name)            
-        
+
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already tried this letter! {guess}")
@@ -207,16 +208,16 @@ def play_game(word, level, score=0):
         else:
             print("Not a valid guess.")
         
-        print("Introduce game")
-        print(f"Game Mode: {level}")
-        print(f"Current Score {score}")
-        print(constants.display_rocket(tries))
-        print(word_completion)
-        print("\n")
+    clear_screen()  # Clear the screen before printing the final result
+    print(f"Game Mode: {level}")
+    print(f"Current Score: {score}")
+    print(constants.display_rocket(tries))
+    print(word_completion)
+    print("\n")
 
     if guessed:
         print("Congrats, you guessed the word and made the mission! You get a point!")
-        score +=1
+        score += 1
     else:
         print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
 
@@ -226,9 +227,12 @@ def play_game(word, level, score=0):
             clear_screen() 
             return play_game(word, level, score)  # Return the result of the recursive call
         elif answer == 'no':
-            return score  # Return the final score when the user chooses not to play again
+            exit_game(name)  
+            return score  
         else:
             print("Please enter 'yes' or 'no'.")
+
+
 
 
 def exit_game(name):
