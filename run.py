@@ -53,7 +53,7 @@ def validate_name():
 
     """
     while True:
-        name = typing_input("What is your name? ")
+        name = typing_input("What is your name?\n ")
         
         if not name.strip():  # Check if the input is empty or contains only whitespace
             typing_print("We need a valid name, Commander. ")
@@ -74,7 +74,7 @@ def validate_planets(name):
     """
     while True:
         try:
-            plant_number = int(typing_input("How many planets are there in our Solar System? "))
+            plant_number = int(typing_input("How many planets are there in our Solar System?\n "))
 
             if plant_number == 9:
                 typing_print(f"\nWell done! You know your stuff, Commander {name}. Your mission will commence in 5...")
@@ -103,7 +103,7 @@ def game_start(name):
     print(constants.instructions)
     
     while True:
-        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}? ").lower()
+        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}?\n ").lower()
 
         if answer == 'yes':
             typing_print("Great, let's get you spacesuited up!")
@@ -125,7 +125,7 @@ def choose_difficulty(name):
     typing_print(f"OK, Commander {name}. We need you to choose your astronaut level. ")
 
     while True:
-        level = typing_input("Are you a Junior, Senior, or Chief? ").capitalize()
+        level = typing_input("Are you a Junior, Senior, or Chief?\n ").capitalize()
 
         if level == 'Junior' or level == 'Senior' or level == 'Chief':
             typing_print(f"Great, we'll start the mission as a {level} astronaut!")
@@ -176,7 +176,7 @@ def play_game(word, level, score=0):
 
     while not guessed and tries > 0:
         
-        guess = typing_input("Please guess a letter or word or type ABORT to end the mission. ").upper()
+        guess = typing_input("Please guess a letter or word or type ABORT to end the mission.\n ").upper()
 
         if guess == "ABORT":
             clear_screen()
@@ -222,7 +222,7 @@ def play_game(word, level, score=0):
         print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
 
     while True:
-        answer = typing_input("Do you want to play again? ").strip().lower()
+        answer = typing_input("Do you want to play again?\n ").strip().lower()
         if answer == 'yes':
             clear_screen() 
             return play_game(word, level, score) 
