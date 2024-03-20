@@ -215,7 +215,7 @@ def play_game(word, level, score=0):
         print("\n")
 
     if guessed:
-        print("Congrats, you guessed the word! You win!")
+        print("Congrats, you guessed the word! You get a point!")
         score +=1
     else:
         print(f"Sorry, you ran out of tries. The word was {word}. Maybe next time!")
