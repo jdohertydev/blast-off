@@ -175,20 +175,14 @@ def play_game(word, level, score=0):
     print("\n")
 
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word or type ABORT to end mission ").upper()
-        clear_screen() 
         
-        print("Introduce game")
-        print(f"Game Mode: {level}")
-        print(f"Current Score {score}")
-        print(constants.display_rocket(tries))
-        print(word_completion)
-        print("\n")
+        guess = input("Please guess a letter or word or type ABORT to end the mission. ").upper()
+
 
         if guess == "ABORT":
             clear_screen()
             return exit_game(name)            
-        
+        clear_screen()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already tried this letter! {guess}")
@@ -214,6 +208,7 @@ def play_game(word, level, score=0):
         else:
             print("Not a valid guess.")
         
+        
         print("Introduce game")
         print(f"Game Mode: {level}")
         print(f"Current Score {score}")
@@ -231,12 +226,14 @@ def play_game(word, level, score=0):
         answer = input("Do you want to play again? (yes/no): ").strip().lower()
         if answer == 'yes':
             clear_screen() 
-            return play_game(word, level, score)  # Return the result of the recursive call
+            return play_game(word, level, score) 
         elif answer == 'no':
             exit_game(name)  
             return score  
         else:
             print("Please enter 'yes' or 'no'.")
+    
+
 
 
 def exit_game(name):
