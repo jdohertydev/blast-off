@@ -111,15 +111,7 @@ def game_start(name):
             clear_screen()
             break
         elif answer == 'no': 
-            typing_print("That is a shame. Thanks for your time but this is where we go our separate ways.")
-            typing_print(f"Goodbye, Commander {name}. This message will self-destruct in 3...")
-            time.sleep(1)
-            typing_print("2...")
-            time.sleep(1)
-            typing_print("1...")
-            time.sleep(1)
-            clear_screen()  
-            break
+            exit_game(name)
         else:
             typing_print(f"We need a yes or no answer, Commander {name}. ")
 
@@ -167,7 +159,6 @@ def play_game(word, level, score=0):
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
     Word is selected randomly from wordlist.
     User has to guess letters or word within 6 turns.
-
     """   
 
     word_completion = "＿" * len(word)
@@ -184,8 +175,12 @@ def play_game(word, level, score=0):
     print("\n")
 
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word ").upper()
+        guess = input("Please guess a letter or word or type ABORT to end mission ").upper()
         clear_screen() 
+
+        if guess == "ABORT":
+            clear_screen()
+            return exit_game(name)            
         
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
@@ -229,19 +224,28 @@ def play_game(word, level, score=0):
         answer = input("Do you want to play again? (yes/no): ").strip().lower()
         if answer == 'yes':
             clear_screen() 
-            play_game(word, level, score)
+            return play_game(word, level, score)  # Return the result of the recursive call
         elif answer == 'no':
-            return False
+            return score  # Return the final score when the user chooses not to play again
         else:
             print("Please enter 'yes' or 'no'.")
 
 
+def exit_game(name):
+    typing_print("That is a shame. Thanks for your time but this is where we go our separate ways. ")
+    typing_print(f"Goodbye, Commander {name}. This message will self-destruct in 3...")
+    time.sleep(1)
+    typing_print("2...")
+    time.sleep(1)
+    typing_print("1...")
+    time.sleep(1)
+    clear_screen()  
+    return None
 
 initiate_game()
 name = validate_name()
 validate_plants(name)
 game_start(name)
 level = choose_difficulty(name)
-
 word = get_word(level)
 play_game(word, level)
