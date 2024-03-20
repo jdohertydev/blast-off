@@ -1,12 +1,12 @@
 word_list_easy = [
-    "easy"
+    "easy", "moon", "planet", "earth", "sun", "meteor", "galaxy", "comet", "star", "rocket"
     ]
 
 word_list_medium = [
-    "medium"]
+    "medium", "astronaut", "orbit", "fuel", "launch", "countdown", "astronomer", "sunlight", "universe"]
 
 word_list_hard = [
-    "hard"
+    "hard", "cosmology", "extragalactic", "interstellar", "occultation", "spectroscope", "translunar", "giantwormhole", "weightlessness", "totality"
 ]
 
 instructions ="""
