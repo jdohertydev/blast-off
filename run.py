@@ -167,7 +167,7 @@ def play_game(word, level, score=0):
     guessed_words = []
     tries = 6
 
-    print("Introduce game")
+    
     print(f"Game Mode: {level}")
     print(f"Current Score: {score}")
     print(constants.display_rocket(tries))
@@ -208,7 +208,7 @@ def play_game(word, level, score=0):
             print("Not a valid guess.")
         
         
-        print("Introduce game")
+        
         print(f"Game Mode: {level}")
         print(f"Current Score: {score}")
         print(constants.display_rocket(tries))
