@@ -64,7 +64,8 @@ def validate_name():
             
         except ValueError:
             name = name.capitalize()
-            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question...\n")
+            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your...")
+            typing_print("mission, we have one more question...\n")
             return name            
 
 def validate_planets(name):
