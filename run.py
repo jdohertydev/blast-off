@@ -126,7 +126,7 @@ def choose_difficulty(name):
     typing_print(f"OK, Commander {name}. We need you to choose your astronaut level. ")
 
     while True:
-        level = typing_input("Are you a Junior, Senior, or Chief?\n ").capitalize()
+        level = typing_input("\nAre you a Junior, Senior, or Chief?\n ").capitalize()
 
         if level == 'Junior' or level == 'Senior' or level == 'Chief':
             typing_print(f"Great, we'll start the mission as a {level} astronaut!")
