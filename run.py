@@ -158,6 +158,16 @@ def get_word(level):
     word = random.choice(word_list) 
     return word.upper()
 
+def print_game_status(level, score, tries, word_completion):
+    """
+    This functions shows game status
+    """
+    print(f"Game Mode: {level}")
+    print(f"Current Score: {score}")
+    print(constants.display_rocket(tries))
+    print(word_completion)
+    print("\n")
+
 def play_game(word, level, score=0):
     """
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
