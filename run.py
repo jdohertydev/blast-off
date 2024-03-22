@@ -131,7 +131,7 @@ def choose_difficulty(name):
     while True:
         level = typing_input("\nAre you a Junior, Senior, or Chief?\n ").capitalize()
 
-        if level == 'Junior' or level == 'Senior' or level == 'Chief':
+        if level == constants.DIFFICULTY_CONFIG["easy"] or level == constants.DIFFICULTY_CONFIG["medium"] or level == constants.DIFFICULTY_CONFIG["hard"]:
             typing_print(f"Great, we'll start the mission as a {level} astronaut!")
             time.sleep(2)
             clear_screen()
