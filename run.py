@@ -180,35 +180,30 @@ def ask_to_play_again(name, word, level, score):
             return score  
         else:
             typing_print("Please enter 'yes' or 'no'.")
-            
-def play_game(word, level, score=0):
+
+def play_game(name, word, level, score=0):
     """
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
     Word is selected randomly from wordlist.
     User has to guess letters or word within 6 turns.
     """   
-
     word_completion = "＿" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 6
+    tries = constants.MAX_TRIES
+
+    print_game_status(level, score, tries, word_completion)
 
     
-    print(f"Game Mode: {level}")
-    print(f"Current Score: {score}")
-    print(constants.display_rocket(tries))
-    print(word_completion)
-    print("\n")
-
     while not guessed and tries > 0:
         
         guess = typing_input("Please guess a letter or word or type ABORT to end the mission.\n ").upper()
-
         if guess == "ABORT":
             clear_screen()
-            return exit_game(name)            
-        clear_screen()
+            return exit_game(name)     
+          
+          
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already tried this letter! {guess}")
@@ -220,7 +215,10 @@ def play_game(word, level, score=0):
                 print(f"Good job {guess} is in the word!")
                 guessed_letters.append(guess)
                 word_completion = ''.join([guess if letter == guess else word_completion[i] for i, letter in enumerate(word)])
-            
+                if word_completion == word:
+                    guessed = True
+
+
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(f"You already guessed the word {guess}")
@@ -233,14 +231,11 @@ def play_game(word, level, score=0):
                 word_completion = word
         else:
             print("Not a valid guess.")
+
+        time.sleep(1)
+        clear_screen() 
         
-        
-        
-        print(f"Game Mode: {level}")
-        print(f"Current Score: {score}")
-        print(constants.display_rocket(tries))
-        print(word_completion)
-        print("\n")
+        print_game_status(level, score, tries, word_completion)
 
     if guessed:
         typing_print("Congrats, you guessed the word and made the mission! You get a point! ")
@@ -248,20 +243,7 @@ def play_game(word, level, score=0):
     else:
         print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
 
-    while True:
-        answer = typing_input("Do you want to play again?\n ").strip().lower()
-        if answer == 'yes':
-            clear_screen() 
-            return play_game(word, level, score) 
-        elif answer == 'no':
-            clear_screen()
-            exit_game(name)  
-            return score  
-        else:
-            typing_print("Please enter 'yes' or 'no'.")
-    
-
-
+    ask_to_play_again(name, word, level, score)
 
 def exit_game(name):
     typing_print("That is a shame. Thanks for your time but this is where we go our separate ways. ")
