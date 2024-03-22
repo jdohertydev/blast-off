@@ -256,10 +256,12 @@ def exit_game(name):
     clear_screen()  
     return None
 
-initiate_game()
-name = validate_name()
-validate_planets(name)
-game_start(name)
-level = choose_difficulty(name)
-word = get_word(level)
-play_game(word, level)
+def main():
+    show_welcome_msg()
+    name = take_name_input()
+    ask_warmup_question(name)
+    game_start(name)
+    level = choose_difficulty(name)
+    word = get_word(level)
+
+main()
