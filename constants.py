@@ -26,6 +26,19 @@ instructions ="""
 +------------------------------------------------------------+
 """
 
+WARM_UP_QUESTION_CONFIG = {
+     "question": "How many planets are there in our Solar System?\n ",
+     "answer": 9,
+}
+
+DIFFICULTY_CONFIG = {
+     "easy": 'Junior',
+     "medium": 'Senior',
+     "hard": 'Chief'
+}
+
+MAX_TRIES = 6
+
 def display_rocket(tries):
 
     stages = [  # Stage 6 rocket ASCII art
@@ -176,32 +189,4 @@ def display_rocket(tries):
 
                 """
     ]
-
-
-    # stages = [
-    #     # Stage 6
-    #     """
-    #     Stage 6 rocket ASCII art
-    #     """,
-    #     # Stage 5
-    #     """
-    #     Stage 5 rocket ASCII art
-    #     """,
-    #     # Stage 4
-    #     """
-    #     Stage 4 rocket ASCII art
-    #     """,
-    #     # Stage 3
-    #     """
-    #     Stage 3 rocket ASCII art
-    #     """,
-    #     # Stage 2
-    #     """
-    #     Stage 2 rocket ASCII art
-    #     """,
-    #     # Stage 1
-    #     """
-    #     Stage 1 rocket ASCII art
-    #     """
-    # ]
     return stages[tries]
