@@ -42,7 +42,7 @@ def clear_screen():
     """
     os.system("clear")
 
-def initiate_game():
+def show_welcome_msg():
     """
     Initiates the game.
 
@@ -50,7 +50,7 @@ def initiate_game():
     typing_print("Welcome to 'Blast Off'!\n")
     typing_print("You have been selected for a very special mission. Before we tell you more...\n")
 
-def validate_name(): 
+def take_name_input(): 
     """
     Validates that the user enters a name.
 
