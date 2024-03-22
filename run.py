@@ -262,5 +262,6 @@ def main():
     game_start(name)
     level = choose_difficulty(name)
     word = get_word(level)
+    play_game(name, word, level)
 
 main()
