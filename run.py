@@ -71,16 +71,16 @@ def take_name_input():
             typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")        
             continue             
 
-def validate_planets(name):
+def ask_warmup_question(name):
     """
     Validates that the answer is a digit.
     
     """
     while True:
         try:
-            plant_number = int(typing_input("How many planets are there in our Solar System?\n "))
+            user_input = int(typing_input(constants.WARM_UP_QUESTION_CONFIG["question"]))
 
-            if plant_number == 9:
+            if user_input == constants.WARM_UP_QUESTION_CONFIG["answer"]:
                 typing_print(f"\nWell done! You know your stuff, Commander {name}. Your mission will commence in 5...")
                 time.sleep(1)
                 typing_print("4...")
@@ -94,7 +94,7 @@ def validate_planets(name):
                 clear_screen()
                 break
             else:
-                typing_print(f"Hmm, {plant_number} isn't quite right, Commander {name}. Try again. ")
+                typing_print(f"Hmm, {user_input} isn't quite right, Commander {name}. Try again. ")
         except ValueError:
             typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")  
  
