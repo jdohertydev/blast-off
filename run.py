@@ -15,8 +15,11 @@ def typing_print(text):
 
     """
     for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
+        if character == '\n':
+            print("\n")
+        else:
+            sys.stdout.write(character)
+            sys.stdout.flush()
         time.sleep(0.05)
   
 def typing_input(text):
