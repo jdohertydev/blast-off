@@ -61,15 +61,15 @@ def take_name_input():
         if not name.strip():  # Check if the input is empty or contains only whitespace
             typing_print("We need a valid name, Commander. ")
             continue
-        try:
-            int(name)
-            typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")            
-            
-        except ValueError:
+
+        if name.replace(" ", "").isalpha():
             name = name.capitalize()
             typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your...")
             typing_print("\nmission, we have one more question...\n")
-            return name            
+            return name    
+        else:
+            typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")        
+            continue             
 
 def validate_planets(name):
     """
