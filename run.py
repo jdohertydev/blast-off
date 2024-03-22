@@ -64,7 +64,7 @@ def take_name_input():
 
         if name.replace(" ", "").isalpha():
             name = name.capitalize()
-            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question." )
+            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question. " )
             return name    
         else:
             typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")        
