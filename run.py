@@ -64,8 +64,7 @@ def take_name_input():
 
         if name.replace(" ", "").isalpha():
             name = name.capitalize()
-            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your...")
-            typing_print("\nmission, we have one more question...\n")
+            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question." )
             return name    
         else:
             typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")        
@@ -126,7 +125,7 @@ def choose_difficulty(name):
     The word register will change in difficulty e.g. easy = moon, hard = constellation
 
     """
-    typing_print(f"OK, Commander {name}. We need you to choose your astronaut level. ")
+    typing_print(f"OK, Commander {name}. We need you to choose your astronaut level which determines the level of difficulty. ")
 
     while True:
         level = typing_input("\nAre you a Junior, Senior, or Chief?\n ").capitalize()
