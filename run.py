@@ -168,6 +168,19 @@ def print_game_status(level, score, tries, word_completion):
     print(word_completion)
     print("\n")
 
+def ask_to_play_again(name, word, level, score):
+    while True:
+        answer = typing_input("Do you want to play again?\n ").strip().lower()
+        if answer == 'yes':
+            clear_screen() 
+            return play_game(word, level, score) 
+        elif answer == 'no':
+            clear_screen()
+            exit_game(name)  
+            return score  
+        else:
+            typing_print("Please enter 'yes' or 'no'.")
+            
 def play_game(word, level, score=0):
     """
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
