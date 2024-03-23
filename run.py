@@ -50,7 +50,7 @@ def show_splash_screen():
     
     """
     print(constants.logo_art)
-    print(constants.logo_art)
+    print(constants.display_rocket(0))
     pause()
     clear_screen()
 
