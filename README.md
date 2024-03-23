@@ -247,11 +247,9 @@ The game features a scoring system that rewards players for correctly guessing w
 
 ## Testing
 
-## Deployment to Heroku
+## Deployment to Heroku (working 23 March 2024)
 
 The project was deployed to Heroku using the following steps adapted from taken from [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku):
-
-## Deploying to Heroku (working 23 March 2024)
 
 1. **Log in to Heroku** or create an account if required.
 2. Click on the **dashboard** from the hamburger menu on the top right to navigate to the apps page.
