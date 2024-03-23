@@ -179,8 +179,17 @@ All good games normally have a level of mastery as this is what keeps players re
 As the user progresses through a turn, it’s inevitable that they will guess a letter that doesn’t appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
 
 ### Game logic
-* Point
-* Validation
+
+* Random Word Selection: The game selects a word randomly from a wordlist depending on level chosen.
+* Limited Guesses: The user has a limited number of tries (6 turns) to guess the word.
+* Interactive Guessing: Users can guess individual letters or the entire word.
+* Feedback Mechanism: Provides immediate feedback on guesses, informing users whether their guess is correct or incorrect.
+* Dynamic Progress Display: Displays the progress of the game through ASCII art, representing the stages of rocket construction.
+* Game Over Handling: Handles game over conditions, such as running out of guesses or successfully guessing the word.
+* Scoring System: Provides a scoring system where users earn points for successfully guessing the word.
+* User Interaction: Utilizes user input functions (typing_input) to interact with the user during the game.
+* Game Status Display: Continuously displays the game status, including the current score, remaining tries, and the word completion status.
+* Game Outcome Notification: Notifies the user of the game outcome, congratulating them for successful guesses or informing them of failure.
 
 ### Exit junctions
 
