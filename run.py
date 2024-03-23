@@ -46,7 +46,7 @@ def clear_screen():
 
 def show_splash_screen():
     """
-    Shows welcome graphic and press any button to continue
+    Shows logo and rocket graphic and press any button to continue
     
     """
     print(constants.logo_art)
