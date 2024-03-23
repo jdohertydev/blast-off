@@ -187,7 +187,7 @@ As the user progresses through a turn, it’s inevitable that they will guess a 
 * Dynamic Progress Display: Displays the progress of the game through ASCII art, representing the stages of rocket construction.
 * Game Over Handling: Handles game over conditions, such as running out of guesses or successfully guessing the word.
 * Scoring System: Provides a scoring system where users earn points for successfully guessing the word.
-* User Interaction: Utilizes user input functions (typing_input) to interact with the user during the game.
+* User Interaction: Utilises user input functions (typing_input) to interact with the user during the game.
 * Game Status Display: Continuously displays the game status, including the current score, remaining tries, and the word completion status.
 * Game Outcome Notification: Notifies the user of the game outcome, congratulating them for successful guesses or informing them of failure.
 
@@ -218,13 +218,40 @@ For this project, these standard libraries were used:
 
 ## Data model
 
+Overall, the game utilises 4 data models to manage the game's logic, user interaction, and state throughout the gameplay experience.
+
+## Blast Off Game Data Models
+
+### 1. Word List Model
+
+The game randomly selects words from predefined word lists based on the chosen difficulty level. These lists, categorised as `constants.word_list_easy`, `constants.word_list_medium`, and `constants.word_list_hard`, organise words according to their difficulty. Players encounter varying levels of challenge based on their chosen difficulty level.
+
+### 2. User Model
+
+While not explicitly defined in the code, the game interacts with users by collecting their input for their name and responses to questions. This model encompasses user interaction and input validation mechanisms. It ensures that user inputs are processed correctly and meet specific criteria, such as providing a valid name or responding appropriately to in-game prompts.
+
+### 3. Game State Model
+
+Throughout gameplay, the game maintains and updates various states to manage its progression. Key components of this model include:
+
+- **Current Word Being Guessed (`word_completion`)**: Represents the ongoing process of guessing the word, with placeholders for unrevealed letters.
+- **Guessed Letters (`guessed_letters`)**: Tracks letters that the player has guessed during the game.
+- **Guessed Words (`guessed_words`)**: Stores words that the player has guessed.
+- **Remaining Attempts (`tries`)**: Monitors the number of remaining attempts or guesses available to the player. 
+
+These components collectively define the game's state at any given moment, reflecting the progress and status of the ongoing gameplay session.
+
+### 4. Score Model
+
+The game features a scoring system that rewards players for correctly guessing words. As players make correct guesses, their score increases, reflecting their progress and success within the game. This model serves to incentivise players and provides a metric for tracking their performance and achievements.
+
 ## Testing
 
 ## Deployment to Heroku
 
 The project was deployed to Heroku using the following steps adapted from taken from [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku):
 
-## Deploying to Heroku
+## Deploying to Heroku (working 23 March 2024)
 
 1. **Log in to Heroku** or create an account if required.
 2. Click on the **dashboard** from the hamburger menu on the top right to navigate to the apps page.
