@@ -9,6 +9,16 @@ word_list_hard = [
     "hard", "cosmology", "extragalactic", "interstellar", "occultation", "spectroscope", "translunar", "giantwormhole", "weightlessness", "totality"
 ]
 
+logo_art= """
+__________.__                   __    ________   _____  _____ 
+\______   \  | _____    _______/  |_  \_____  \_/ ____\/ ____\\
+ |    |  _/  | \__  \  /  ___/\   __\  /   |   \   __\\   __\ 
+ |    |   \  |__/ __ \_\___ \  |  |   /    |    \  |   |  |   
+ |______  /____(____  /____  > |__|   \_______  /__|   |__|   
+        \/          \/     \/                 \/              
+
+"""
+
 instructions ="""
 +------------------------------------------------------------+
 |              CLASSIFIED - MISSION OBJECTIVE                |

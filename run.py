@@ -1,11 +1,13 @@
 # Import the random module for random word selction
 # Import time, sys and os for typing effect and clear
 # Import constants to get random words and ASCII images
+# Import code to enable press any button to continue https://stackoverflow.com/questions/11876618/python-press-any-key-to-exit
 
 import random
 import time,sys
 import os
 import constants
+from getch import pause
 
 def typing_print(text):
     """
@@ -41,6 +43,16 @@ def clear_screen():
 
     """
     os.system("clear")
+
+def show_splash_screen():
+    """
+    Shows welcome graphic and press any button to continue
+    
+    """
+    print(constants.logo_art)
+    print(constants.logo_art)
+    pause()
+    clear_screen()
 
 def show_welcome_msg():
     """
@@ -193,7 +205,6 @@ def play_game(name, word, level, score=0):
     tries = constants.MAX_TRIES
 
     print_game_status(level, score, tries, word_completion)
-
     
     while not guessed and tries > 0:
         
@@ -256,6 +267,7 @@ def exit_game(name):
     return None
 
 def main():
+    show_splash_screen()
     show_welcome_msg()
     name = take_name_input()
     ask_warmup_question(name)
