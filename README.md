@@ -20,14 +20,38 @@ The game has been designed to be as simple as possible. The player:
 
 Features
 
+## Planning Stage
 
+### User Stories:
 
+As a user, I want to:
 
-Planning Stage
-User Story
-Site Aims
-How Will This Be Achieved
-Game Flow Chart
+* Be fully immersed in a ‘space and the universe’ experience.
+* Choose my level of difficulty.
+* Receive feedback regarding my progress.
+* Easily exit the game.
+
+### Site Aims
+
+The site aims to:
+
+* Never throw an error.
+* Create an arcade like feel using basic black and white.
+* Use visuals to bring the text to life.
+
+### How Will This Be Achieved:
+
+To achieve the above, the site will:
+
+* Speak directly to the player in the first person after their name has been captured.
+* Use a typewriter effect on any dialogues which feels like the message is being written in the moment.
+* Clearly show the player’s score, game mode level and used letters.
+* Use ASCII art to show the stages of lives lost during game mode.
+* Clear the screen on stage changes so not to confuse the player.
+* Handle very carefully user input to avoid any errors.
+* Be easy for the player to exit the game. There will be ‘getting off’ points during a live game and when the game is over.
+
+## Game Flow Chart
 
 Start
 |
