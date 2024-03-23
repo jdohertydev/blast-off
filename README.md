@@ -195,10 +195,29 @@ As the user progresses through a turn, it’s inevitable that they will guess a 
 
 A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing ‘ABORT’ or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
 
+## Future-Enhancements
 
-Future-Enhancements
+In the future, a leader board could be added to show highest scores. As well as this, a 2-player mode could be created so that friends could choose their own words. Finally, having basic audio play per keyboard stroke would add to the immersive experience.
+
 Testing Phase
-Libraries
+
+## Libraries
+
+For this project, these standard libraries were used:
+
+* random: This module is used for random word selection. It allows the program to choose a word randomly from a predefined wordlist.
+* time, sys, os: These modules are used for creating typing effects and clearing the screen to enhance the user experience.
+    *time: It is used for introducing delays between printing characters to create a typing effect.
+    * sys: It provides access to functions that interact with the Python interpreter. In this code, it's used for writing characters to the standard output (sys.stdout) to create the typing effect.
+    * os: It provides functions for interacting with the operating system. Here, it's used to clear the screen to improve the visual presentation of the game.
+
+3rd party libraries used are:
+
+* constants: This is a custom module imported from constants.py. It likely contains predefined constants such as word lists, ASCII art, and configuration settings used throughout the game.
+* getch: This module contains fthe unctionality for pausing the program until the user presses any key to continue.
+
+
+
 Python Standard Library
 3rd Party Libraries
 Deployment to Heroku
