@@ -68,7 +68,7 @@ def take_name_input():
 
     """
     while True:
-        name = typing_input("What is your name?\n ")
+        name = typing_input("What is your name?\n ").strip()
         
         if not name.strip():  # Check if the input is empty or contains only whitespace
             typing_print("We need a valid name, Commander. ")
@@ -118,7 +118,7 @@ def game_start(name):
     print(constants.instructions)
     
     while True:
-        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}?\n ").lower()
+        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}?\n ").lower().strip()
 
         if answer == 'yes':
             typing_print("Great, let's get you spacesuited up!")
@@ -140,7 +140,7 @@ def choose_difficulty(name):
     typing_print(f"OK, Commander {name}. We need you to choose your astronaut level which determines the level of difficulty. ")
 
     while True:
-        level = typing_input("\nAre you a Junior, Senior, or Chief?\n ").capitalize()
+        level = typing_input("\nAre you a Junior, Senior, or Chief?\n ").capitalize().strip()
 
         if level == constants.DIFFICULTY_CONFIG["easy"] or level == constants.DIFFICULTY_CONFIG["medium"] or level == constants.DIFFICULTY_CONFIG["hard"]:
             typing_print(f"Great, we'll start the mission as a {level} astronaut!")
@@ -208,7 +208,7 @@ def play_game(name, word, level, score=0):
     
     while not guessed and tries > 0:
         
-        guess = typing_input("Please guess a letter or word or type ABORT to end the mission.\n ").upper()
+        guess = typing_input("Please guess a letter or word or type ABORT to end the mission.\n ").upper().strip()
         if guess == "ABORT":
             clear_screen()
             return exit_game(name)     
