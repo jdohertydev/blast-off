@@ -4,6 +4,8 @@
 
 ‘Blast off!’ is an immersive, educational guessing game for one player with a ‘space and the universe’ theme. Similar to ‘hangman’, the player is presented with a series of underscores that represent a word. They must select letters from the alphabet and guess the word to win. This game is run in a mock terminal deployed by Heroku.
 
+Screenshot
+
 In recent years, the traditional hangman game has fallen out of favour with many educators due to sensitivity to violence and a lack of educational value. As a former teacher, I wanted to recreate something that could be used by any teacher in the classroom or child at home.
 
 Here is the live version of the game.
@@ -17,8 +19,6 @@ The game has been designed to be as simple as possible. The player:
 3. Is presented with a series of underscores and must try and guess the word by either selecting individual letters or by 4. writing the word itself.
 5. Has 6 turns in order to guess the word. By doing so correctly, the player gets a point. If the player doesn’t, the turn is over, the word is revealed and they can play another round.
 6. Has the option to continue playing or exit the game.
-
-Features
 
 ## Planning Stage
 
@@ -54,7 +54,7 @@ To achieve the above, the site will:
 ## Game Flow Chart
 
 Start
-|
+
 |-----> Show Splash Screen
 |         |
 |         |-----> Show Logo and Rocket Graphic
@@ -135,17 +135,26 @@ Start
 |         |
 |         |-----> Clear Screen
 | 
-End
+End\
 
-Features
-Welcome Screen
-How to Play Guide
-Game Modes
-Game Screen
-Playing
-Win
-Lose
-Exit
+## Features
+
+### Logo and graphics
+### Press any button to continue
+### Typewriter effect
+### Clear screen
+### Colour
+### Capture name variable
+### Warm-up question
+### Level of user difficulty
+### Stages of rocket construction
+### Game logic
+* Point
+* Validation
+### Exit junctions
+
+
+
 Future-Enhancements
 Testing Phase
 Libraries
