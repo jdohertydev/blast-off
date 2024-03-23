@@ -216,12 +216,37 @@ For this project, these standard libraries were used:
 * constants: This is a custom module imported from constants.py. It likely contains predefined constants such as word lists, ASCII art, and configuration settings used throughout the game.
 * getch: This module contains fthe unctionality for pausing the program until the user presses any key to continue.
 
+## Data model
 
+## Testing
 
-Python Standard Library
-3rd Party Libraries
-Deployment to Heroku
-Credits
+## Deployment to Heroku
+
+The project was deployed to Heroku using the following steps adapted from taken from [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku):
+
+## Deploying to Heroku
+
+1. **Log in to Heroku** or create an account if required.
+2. Click on the **dashboard** from the hamburger menu on the top right to navigate to the apps page.
+3. Click the **new button** on the top right of the page.
+4. Select the "**create new app**" option.
+5. Enter the **app name**. I named mine 'Blast Off!' (this has to be unique).
+6. Once Heroku accepts the app name, **select your region**.
+7. Click the **purple Create app button** when you are ready to proceed.
+8. This will bring you to the **project Deploy tab**. From here, navigate to the **settings tab** and scroll down to the **Config Vars section**.
+9. Click the button labeled **Reveal Config Vars**, Enter the key as **Port**, the Value as **8000**, and Click the **add button**.
+10. Scroll down to the **buildpacks section** of the settings page, click the button labeled **Add buildpack**, select **Python**, and click **Save Changes**.
+11. Repeat **step 10** but this time add **Node.js** instead of Python.
+12. Remember to keep the buildpacks in the correct order, **Python first** and **Node second**.
+13. Scroll back to the top of the settings page and navigate to the **Deploy tab**.
+14. From the deploy tab, select **GitHub** as the deployment method.
+15. Confirm you want to connect to GitHub.
+16. Search for the **repository name** and click the **connect button** next to the intended repository.
+17. From the bottom of the deploy page, select your preferred deployment type by following one of the steps below:
+    - Clicking either "**Enable Automatic Deploys**" for automatic deployment when you push updates to GitHub.
+    - Select the correct branch for deployment from the drop-down menu and click the "**Deploy Branch**" button for manual deployment.
+
+## Credits
 
 
     ilyasolgun11  https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku
