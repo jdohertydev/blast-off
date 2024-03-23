@@ -140,19 +140,51 @@ End\
 ## Features
 
 ### Logo and graphics
+
+* The logo and graphic featured in the splash screen are made in ASCII characters as graphics are not supported in Heroku. This gives the game a classic arcade feeling.
+
+IMAGE
+
 ### Press any button to continue
+
+Again, in the spirit of the arcade feeling, the classic “press any button to continue” text is achieved importing a library called ‘getch’ and calling ‘pause’.
+
+IMAGE
+
 ### Typewriter effect
+
+A current feature of Chat GPT and numerous classic arcade games, the typewriter effect is used to simulate that mission control is directly talking to the player. This is one of the many ways the game immerses the player within it.
+
+IMAGE
+
 ### Clear screen
+
+A simple but key feature is the ‘clear screen’ function. This acts as a signpost for each stage of the game, like a new chapter in a book, and without it, the user will be left with a large amount of text in the terminal. Visually, this is not pretty but it could also confuse the user and take away from the immersive experience.
+
 ### Colour
 ### Capture name variable
+
+When keeping someone’s attention, it is often said that using the person’s name is the most effective way. The ‘take_name_input’ function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
+
 ### Warm-up question
+
+To generate more player engagement, a warm-up question is asked before the player starts the game. Hopefully, the player already knows the answer and will feel even more immersed in the experience.
+
 ### Level of user difficulty
+
+All good games normally have a level of mastery as this is what keeps players returning. This game has 3 basic levels (easy, medium and hard) but uses different nomenclature connected to space travel (Junior, Senior and Chief). This feeds back into the primary objective of making this an immersive game. 
+
 ### Stages of rocket construction
+
+As the user progresses through a turn, it’s inevitable that they will guess a letter that doesn’t appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
+
 ### Game logic
 * Point
 * Validation
+
 ### Exit junctions
 
+A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing ‘ABORT’ or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
 
 
 Future-Enhancements
