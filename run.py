@@ -25,7 +25,8 @@ def typing_print(text):
             sys.stdout.write(character)
             sys.stdout.flush()
         time.sleep(0.05)
-  
+
+
 def typing_input(text):
     """
     https://www.101computing.net/python-typing-text-effect/
@@ -51,7 +52,7 @@ def clear_screen():
 def show_splash_screen():
     """
     Shows logo and rocket graphic and press any button to continue
-    
+
     """
     print(constants.logo_art)
     print(constants.display_rocket(0))
@@ -65,34 +66,35 @@ def show_welcome_msg():
 
     """
     typing_print("Welcome to 'Blast Off'!\n")
-    typing_print("You have been selected for a very special mission. Before we tell you more...\n")
+    typing_print("You have been selected for a very special mission.\n")
+    typing_print("Before we tell you more...\n")
 
 
-def take_name_input(): 
+def take_name_input():
     """
     Validates that the user enters a name.
 
     """
     while True:
         name = typing_input("What is your name?\n ").strip()
-        
         if not name.strip():  # Check if the input is empty or contains only whitespace
             typing_print("We need a valid name, Commander. ")
             continue
 
         if name.replace(" ", "").isalpha():
             name = name.capitalize()
-            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question. " )
-            return name    
+            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question. ")
+            return name
         else:
-            typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")        
-            continue             
+            typing_print(f"\n{name} isn't a name on our VIP list, try again using letters from the alpabet.\n")
+            typing_print("Try again using letters from the alpabet.")
+            continue
 
 
 def ask_warmup_question(name):
     """
     Validates that the answer is a digit.
-    
+
     """
     while True:
         try:
@@ -114,17 +116,17 @@ def ask_warmup_question(name):
             else:
                 typing_print(f"Hmm, {user_input} isn't quite right, Commander {name}. Try again. ")
         except ValueError:
-            typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")  
- 
+            typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")
+
 
 def game_start(name):
     """
     Explains rules of the game
     Player selects level of difficulty
-    
+
     """
     print(constants.instructions)
-    
+
     while True:
         answer = typing_input(f"Do you accept the terms of this mission, Commander {name}?\n ").lower().strip()
 
@@ -133,7 +135,7 @@ def game_start(name):
             time.sleep(2)
             clear_screen()
             break
-        elif answer == 'no': 
+        elif answer == 'no':
             exit_game(name)
         else:
             typing_print(f"We need a yes or no answer, Commander {name}. ")
@@ -164,7 +166,7 @@ def get_word(level):
     """
     Randomly selects word from wordlist.
     The word selected depends on level choosen.
-    
+
     """
     if level == "Junior":
         word_list = constants.word_list_easy
@@ -176,7 +178,7 @@ def get_word(level):
         print("Invalid difficulty level provided.")
         return None
 
-    word = random.choice(word_list) 
+    word = random.choice(word_list)
     return word.upper()
 
 
@@ -195,17 +197,17 @@ def print_game_status(level, score, tries, word_completion):
 def ask_to_play_again(name, word, level, score):
     """
     Prompts user if they want to play another round or exit.
-    
+
     """
     while True:
         answer = typing_input("Do you want to play again?\n ").strip().lower()
         if answer == 'yes':
-            clear_screen() 
-            return play_game(word, level, score) 
+            clear_screen()
+            return play_game(word, level, score)
         elif answer == 'no':
             clear_screen()
-            exit_game(name)  
-            return score  
+            exit_game(name)
+            return score
         else:
             typing_print("Please enter 'yes' or 'no'.")
 
@@ -215,8 +217,8 @@ def play_game(name, word, level, score=0):
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
     Word is selected randomly from wordlist.
     User has to guess letters or word within 6 turns.
-    
-    """   
+
+    """
     word_completion = "＿" * len(word)
     guessed = False
     guessed_letters = []
@@ -224,20 +226,19 @@ def play_game(name, word, level, score=0):
     tries = constants.MAX_TRIES
 
     print_game_status(level, score, tries, word_completion)
-    
+
     while not guessed and tries > 0:
-        
+
         guess = typing_input("Please guess a letter or word or type ABORT to end the mission.\n ").upper().strip()
         if guess == "ABORT":
             clear_screen()
-            return exit_game(name)     
-          
-          
+            return exit_game(name)
+
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(f"You already tried this letter! {guess}")
             elif guess not in word:
-                print(f"{guess} is not in the word!") 
+                print(f"{guess} is not in the word!")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
@@ -246,7 +247,6 @@ def play_game(name, word, level, score=0):
                 word_completion = ''.join([guess if letter == guess else word_completion[i] for i, letter in enumerate(word)])
                 if word_completion == word:
                     guessed = True
-
 
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
@@ -262,17 +262,18 @@ def play_game(name, word, level, score=0):
             print("Not a valid guess.")
 
         time.sleep(1)
-        clear_screen() 
-        
+        clear_screen()
+
         print_game_status(level, score, tries, word_completion)
 
     if guessed:
         typing_print("Congrats, you guessed the word and made the mission! You get a point! ")
-        score +=1
+        score += 1
     else:
         print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
 
     ask_to_play_again(name, word, level, score)
+
 
 def exit_game(name):
     """
@@ -286,13 +287,14 @@ def exit_game(name):
     time.sleep(1)
     typing_print("1...")
     time.sleep(1)
-    clear_screen()  
+    clear_screen()
     return None
+
 
 def main():
     """
     Excutes all the functions for the game.
-    
+
     """
     show_splash_screen()
     show_welcome_msg()
@@ -302,5 +304,6 @@ def main():
     level = choose_difficulty(name)
     word = get_word(level)
     play_game(name, word, level)
+
 
 main()
