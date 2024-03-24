@@ -139,6 +139,32 @@ End\
 
 ## Features
 
+## User Input Validation
+
+The Python code employs several mechanisms to validate user input, ensuring smooth interaction and adherence to game rules.
+
+1. **Input Prompt Functions:**
+   - The `typing_input(text)` function is responsible for getting user input. It displays the specified `text` parameter as a prompt, waits for user input, and returns the entered value to the calling function.
+
+2. **Name Input Validation:**
+   - The `take_name_input()` function ensures that the user provides a valid name. It prompts the user to enter their name and checks if it contains only alphabetical characters. Empty or whitespace-only inputs are rejected, and the user is prompted until a valid name is provided.
+
+3. **Warm-up Question Validation:**
+   - The `ask_warmup_question(name)` function poses a warm-up question requiring a numeric answer. It uses a `try-except` block to handle non-numeric inputs, prompting the user to enter a valid numeric digit.
+
+4. **Game Start Validation:**
+   - The `game_start(name)` function prompts the user to accept the mission terms with a 'yes' or 'no' response. It continues to prompt the user until a valid response is received.
+
+5. **Difficulty Level Selection Validation:**
+   - The `choose_difficulty(name)` function prompts the user to select a difficulty level ('Junior', 'Senior', or 'Chief'). It ensures that the user's input matches one of these options, repeatedly prompting until a valid choice is made.
+
+6. **Word Guess Validation:**
+   - During gameplay, the user is prompted to guess a letter or word. The input is validated:
+     - 'ABORT' input terminates the game.
+     - Single alphabetical characters are considered letter guesses.
+     - Strings matching the target word's length and consisting of alphabetical characters are treated as word guesses.
+     - If the input doesn't meet these criteria, an error message is displayed, and the user is prompted to try again.
+
 ### Logo and graphics
 
 * The logo and graphic featured in the splash screen are made in ASCII characters as graphics are not supported in Heroku. This gives the game a classic arcade feeling.
@@ -161,7 +187,6 @@ IMAGE
 
 A simple but key feature is the ‘clear screen’ function. This acts as a signpost for each stage of the game, like a new chapter in a book, and without it, the user will be left with a large amount of text in the terminal. Visually, this is not pretty but it could also confuse the user and take away from the immersive experience.
 
-### Colour
 ### Capture name variable
 
 When keeping someone’s attention, it is often said that using the person’s name is the most effective way. The ‘take_name_input’ function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
@@ -198,8 +223,6 @@ A good game should have exit junctions built into it. Within this game, the play
 ## Future-Enhancements
 
 In the future, a leader board could be added to show highest scores. As well as this, a 2-player mode could be created so that friends could choose their own words. Finally, having basic audio play per keyboard stroke would add to the immersive experience.
-
-Testing Phase
 
 ## Libraries
 
@@ -274,6 +297,5 @@ The project was deployed to Heroku using the following steps adapted from [ilyas
     - Select the correct branch for deployment from the drop-down menu and click the "**Deploy Branch**" button for manual deployment.
 
 ## Credits
-
 
     ilyasolgun11  https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku
