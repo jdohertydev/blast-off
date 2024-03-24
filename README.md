@@ -270,6 +270,10 @@ The game features a scoring system that rewards players for correctly guessing w
 
 ## Testing
 
+### Fixed bugs
+
+
+
 
 
 ## Deployment to Heroku (working 23 March 2024)
@@ -301,5 +305,5 @@ The project was deployed to Heroku using the following steps adapted from [ilyas
 I would like to thank:
 * Kite's YouTube video ['How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w&t=288s), which helped me understand the logic of the game.
 * My mentor for providing feedback along the way and helping with some of the logic of the code.
-* [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku), whos Ultimate Hangman inspired me to challenge myself even further.
-* ChatGPT, which acted as a 24/7 tutor, explaining why errors were being thrown.
+* [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku), whos Ultimate Hangman inspired me to challenge myself even further with the game.
+* ChatGPT, which acted as a 24/7 tutor, explaining why errors were being thrown. It also helped me build some of the sections in the readme file.

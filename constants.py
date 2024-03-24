@@ -1,15 +1,16 @@
 word_list_easy = [
     "easy", "moon", "planet", "earth", "sun", "meteor", "galaxy", "comet", "star", "rocket"
-    ]
+]
 
 word_list_medium = [
-    "medium", "astronaut", "orbit", "fuel", "launch", "countdown", "astronomer", "sunlight", "universe"]
+    "medium", "astronaut", "orbit", "fuel", "launch", "countdown", "astronomer", "sunlight", "universe"
+]
 
 word_list_hard = [
     "hard", "cosmology", "extragalactic", "interstellar", "occultation", "spectroscope", "translunar", "giantwormhole", "weightlessness", "totality"
 ]
 
-logo_art= """
+logo_art = """
 __________.__                   __    ________   _____  _____ 
 \______   \  | _____    _______/  |_  \_____  \_/ ____\/ ____\\
  |    |  _/  | \__  \  /  ___/\   __\  /   |   \   __\\   __\ 
@@ -18,7 +19,7 @@ __________.__                   __    ________   _____  _____
         \/          \/     \/                 \/              
 """
 
-instructions ="""
+instructions = """
 +------------------------------------------------------------+
 |              CLASSIFIED - MISSION OBJECTIVE                |
 +------------------------------------------------------------+
