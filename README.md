@@ -139,7 +139,7 @@ End\
 
 ## Features
 
-## User Input Validation
+### User Input Validation
 
 The Python code employs several mechanisms to validate user input, ensuring smooth interaction and adherence to game rules.
 
@@ -298,4 +298,8 @@ The project was deployed to Heroku using the following steps adapted from [ilyas
 
 ## Credits
 
-    ilyasolgun11  https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku
+I would like to thank:
+* Kite's YouTube video ['How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w&t=288s), which helped me understand the logic of the game.
+* My mentor for providing feedback along the way and helping with some of the logic of the code.
+* [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku), whos Ultimate Hangman inspired me to challenge myself even further.
+* ChatGPT, which acted as a 24/7 tutor, explaining why errors were being thrown.
