@@ -4,10 +4,12 @@
 # Import code to enable press any button to continue https://stackoverflow.com/questions/11876618/python-press-any-key-to-exit
 
 import random
-import time,sys
+import time
+import sys
 import os
 import constants
 from getch import pause
+
 
 def typing_print(text):
     """
@@ -32,8 +34,9 @@ def typing_input(text):
 
     """
     typing_print(text)
-    value = input()  
+    value = input()
     return value
+
 
 def clear_screen():
     """
@@ -43,6 +46,7 @@ def clear_screen():
 
     """
     os.system("clear")
+
 
 def show_splash_screen():
     """
@@ -54,6 +58,7 @@ def show_splash_screen():
     pause()
     clear_screen()
 
+
 def show_welcome_msg():
     """
     Initiates the game.
@@ -61,6 +66,7 @@ def show_welcome_msg():
     """
     typing_print("Welcome to 'Blast Off'!\n")
     typing_print("You have been selected for a very special mission. Before we tell you more...\n")
+
 
 def take_name_input(): 
     """
@@ -81,6 +87,7 @@ def take_name_input():
         else:
             typing_print(f"{name} isn't a name on our VIP list, try again using letters from the alpabet.")        
             continue             
+
 
 def ask_warmup_question(name):
     """
@@ -109,6 +116,7 @@ def ask_warmup_question(name):
         except ValueError:
             typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")  
  
+
 def game_start(name):
     """
     Explains rules of the game
@@ -130,6 +138,7 @@ def game_start(name):
         else:
             typing_print(f"We need a yes or no answer, Commander {name}. ")
 
+
 def choose_difficulty(name):
     """
     The user chooses level of difficulty.
@@ -150,6 +159,7 @@ def choose_difficulty(name):
         else:
             typing_print(f"We need your answer, Commander {name}. ")
 
+
 def get_word(level):
     """
     Randomly selects word from wordlist.
@@ -169,9 +179,11 @@ def get_word(level):
     word = random.choice(word_list) 
     return word.upper()
 
+
 def print_game_status(level, score, tries, word_completion):
     """
-    This functions shows game status
+    This functions shows game status.
+
     """
     print(f"Game Mode: {level}")
     print(f"Current Score: {score}")
@@ -179,7 +191,12 @@ def print_game_status(level, score, tries, word_completion):
     print(word_completion)
     print("\n")
 
+
 def ask_to_play_again(name, word, level, score):
+    """
+    Prompts user if they want to play another round or exit.
+    
+    """
     while True:
         answer = typing_input("Do you want to play again?\n ").strip().lower()
         if answer == 'yes':
@@ -192,11 +209,13 @@ def ask_to_play_again(name, word, level, score):
         else:
             typing_print("Please enter 'yes' or 'no'.")
 
+
 def play_game(name, word, level, score=0):
     """
     Adapted from https://www.youtube.com/watch?v=m4nEnsavl6w
     Word is selected randomly from wordlist.
     User has to guess letters or word within 6 turns.
+    
     """   
     word_completion = "＿" * len(word)
     guessed = False
@@ -256,6 +275,10 @@ def play_game(name, word, level, score=0):
     ask_to_play_again(name, word, level, score)
 
 def exit_game(name):
+    """
+    Exit game sequence with cool countdown.
+
+    """
     typing_print("That is a shame. Thanks for your time but this is where we go our separate ways. ")
     typing_print(f"Goodbye, Commander {name}. This message will self-destruct in 3...")
     time.sleep(1)
@@ -267,6 +290,10 @@ def exit_game(name):
     return None
 
 def main():
+    """
+    Excutes all the functions for the game.
+    
+    """
     show_splash_screen()
     show_welcome_msg()
     name = take_name_input()
