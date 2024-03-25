@@ -306,6 +306,8 @@ for character in text:
     time.sleep(0.05)
 ```
 
+* Validation using Linter check.
+
 ### Unfixed Bugs
 
 * Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is compete, their text will become embedded in the game script.

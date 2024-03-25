@@ -1,17 +1,21 @@
 word_list_easy = [
-    "fuel", "moon", "planet", "earth", "sun", "meteor", "galaxy", "comet", "star", "rocket"
+    "fuel", "moon", "planet", "earth", "sun",
+    "meteor", "galaxy", "comet", "star", "rocket"
 ]
 
 word_list_medium = [
-    "spaceship", "astronaut", "orbit", "fuel", "launch", "countdown", "astronomer", "sunlight", "universe"
+    "spaceship", "astronaut", "orbit", "fuel", "launch",
+    "countdown", "astronomer", "sunlight", "universe"
 ]
 
 word_list_hard = [
-    "intergalactic", "cosmology", "extragalactic", "interstellar", "occultation", "spectroscope", "translunar", "giantwormhole", "weightlessness", "totality"
+    "intergalactic", "cosmology", "extragalactic", "interstellar",
+    "occultation", "spectroscope", "translunar",
+    "giantwormhole", "weightlessness", "totality"
 ]
 
 logo_art = """
-__________.__                   __    ________   _____  _____ 
+__________.__                  __    ________   _____  _____
 \______   \  | _____    _______/  |_  \_____  \_/ ____\/ ____\\
  |    |  _/  | \__  \  /  ___/\   __\  /   |   \   __\\   __\ 
  |    |   \  |__/ __ \_\___ \  |  |   /    |    \  |   |  |   
