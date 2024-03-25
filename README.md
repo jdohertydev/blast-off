@@ -308,9 +308,12 @@ for character in text:
 
 * Validation using Linter check.
 
-* Issue with Game Mode Displaying as "0"
+* Issue with Game Mode Displaying as "0":
    * The game mode appeared as "0" when the player selected 'play again'. This occurred because the play_game function was called with the level variable as the first argument instead of the name variable. This mistake was made in the ask_to_play_again function where the play_game function was invoked with the parameters in the wrong order.
    * To resolve this issue, the play_game function was called with the correct parameters. Specifically, the name variable was passed as the first argument, followed by the word, level, and score variables in the correct order.
+
+* Get new word:
+   * Before, the same word was loading for each turn. To fix this I added `word = get_word(level)` to the `play_game`function. 
 
 ### Unfixed Bugs
 

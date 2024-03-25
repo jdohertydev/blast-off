@@ -236,6 +236,7 @@ def play_game(name, word, level, score=0):
     User has to guess letters or word within 6 turns.
 
     """
+    word = get_word(level)
     word_completion = "＿" * len(word)
     guessed = False
     guessed_letters = []
