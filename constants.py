@@ -37,7 +37,7 @@ instructions = """
 """
 
 WARM_UP_QUESTION_CONFIG = {
-     "question": "How many planets are there in our Solar System? ",
+     "question": "\nHow many planets are there in our Solar System? ",
      "answer": 9,
 }
 
