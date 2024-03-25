@@ -142,7 +142,9 @@ def game_start(name):
     print(constants.instructions)
 
     while True:
-        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}? ").lower().strip()
+        answer = typing_input(
+            f"Do you accept the terms of this mission, "
+            f"Commander {name}? ").lower().strip()
 
         if answer == 'yes':
             typing_print("\nGreat, let's get you spacesuited up!")
@@ -152,26 +154,29 @@ def game_start(name):
         elif answer == 'no':
             exit_game(name)
         else:
-            typing_print(f"We need a yes or no answer, Commander {name}. ")
+            typing_print(f"\nWe need a yes or no answer, Commander {name}. ")
 
 
 def choose_difficulty(name):
     """
     The user chooses level of difficulty.
     Easy, medium or hard.
-    The word register will change in difficulty e.g. easy = moon, hard = constellation.
+    The word register will change in difficulty:
+        e.g. easy = moon, hard = constellation.
     """
 
     while True:
-        level = typing_input("\nAre you a Junior, Senior, or Chief? ").capitalize().strip()
+        level = typing_input(
+            "\nAre you a Junior, Senior, or Chief? ").capitalize().strip()
 
         if level in constants.DIFFICULTY_CONFIG.values():
-            typing_print(f"\nGreat, we'll start the mission as a {level} astronaut!")
+            typing_print(
+                f"\nGreat, we'll start the mission as a {level} astronaut!")
             time.sleep(2)
             clear_screen()
             return level
         else:
-            typing_print(f"We need your answer, Commander {name}. ")
+            typing_print(f"\nWe need your answer, Commander {name}. ")
 
 
 def get_word(level):
@@ -241,7 +246,9 @@ def play_game(name, word, level, score=0):
 
     while not guessed and tries > 0:
 
-        guess = typing_input("Please guess a letter or word or type ABORT to end the mission.\n ").upper().strip()
+        guess = typing_input(
+            "Please guess a letter or word or type ABORT "
+            "to end the mission.\n ").upper().strip()
         if guess == "ABORT":
             clear_screen()
             return exit_game(name)
@@ -256,7 +263,10 @@ def play_game(name, word, level, score=0):
             else:
                 print(f"Good job {guess} is in the word!")
                 guessed_letters.append(guess)
-                word_completion = ''.join([guess if letter == guess else word_completion[i] for i, letter in enumerate(word)])
+                word_completion = ''.join([
+                    guess if letter == guess else word_completion[i]
+                    for i, letter in enumerate(word)
+                ])
                 if word_completion == word:
                     guessed = True
 
@@ -279,10 +289,14 @@ def play_game(name, word, level, score=0):
         print_game_status(level, score, tries, word_completion)
 
     if guessed:
-        typing_print("Congrats, you guessed the word and made the mission! You get a point! ")
+        typing_print(
+            "Congrats, you guessed the word and made the mission! "
+            "You get a point! ")
         score += 1
     else:
-        print(f"Sorry, the rocket left without you. The word was {word}. Maybe you can crew next time!")
+        print(
+            f"Sorry, the rocket left without you. The word was {word}. "
+            "Maybe you can crew next time!")
 
     ask_to_play_again(name, word, level, score)
 
@@ -292,8 +306,12 @@ def exit_game(name):
     Exit game sequence with cool countdown.
 
     """
-    typing_print("That is a shame. Thanks for your time but this is where we go our separate ways. ")
-    typing_print(f"Goodbye, Commander {name}. This message will self-destruct in 3...")
+    typing_print(
+        "That is a shame. Thanks for your time "
+        "but this is where we go our separate ways. ")
+    typing_print(
+        f"Goodbye, Commander {name}. "
+        "This message will self-destruct in 3...")
     time.sleep(1)
     typing_print("2...")
     time.sleep(1)
