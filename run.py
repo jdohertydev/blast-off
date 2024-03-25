@@ -220,7 +220,7 @@ def ask_to_play_again(name, word, level, score):
         answer = typing_input("Do you want to play again?\n ").strip().lower()
         if answer == 'yes':
             clear_screen()
-            return play_game(word, level, score)
+            return play_game(name, word, level, score)
         elif answer == 'no':
             clear_screen()
             exit_game(name)

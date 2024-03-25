@@ -308,10 +308,14 @@ for character in text:
 
 * Validation using Linter check.
 
+* Issue with Game Mode Displaying as "0"
+   * The game mode appeared as "0" when the player selected 'play again'. This occurred because the play_game function was called with the level variable as the first argument instead of the name variable. This mistake was made in the ask_to_play_again function where the play_game function was invoked with the parameters in the wrong order.
+   * To resolve this issue, the play_game function was called with the correct parameters. Specifically, the name variable was passed as the first argument, followed by the word, level, and score variables in the correct order.
+
 ### Unfixed Bugs
 
 * Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is compete, their text will become embedded in the game script.
-* When text is printed to the terminal, on occasions it will go onto a new line and it doesn’t wrap cleanly. 
+* When text is printed to the terminal, on occasions it will go onto a new line and it doesn’t wrap cleanly.
 
 ## Deployment to Heroku (working 23 March 2024)
 
