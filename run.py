@@ -76,7 +76,7 @@ def take_name_input():
 
     """
     while True:
-        name = typing_input("What is your name?\n ").strip()
+        name = typing_input("What is your name? ").strip()
         if not name.strip():  # Check if the input is empty or contains only whitespace
             typing_print("We need a valid name, Commander. ")
             continue
@@ -128,10 +128,10 @@ def game_start(name):
     print(constants.instructions)
 
     while True:
-        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}?\n ").lower().strip()
+        answer = typing_input(f"Do you accept the terms of this mission, Commander {name}? ").lower().strip()
 
         if answer == 'yes':
-            typing_print("Great, let's get you spacesuited up!")
+            typing_print("\nGreat, let's get you spacesuited up!")
             time.sleep(2)
             clear_screen()
             break
@@ -151,7 +151,7 @@ def choose_difficulty(name):
     typing_print(f"OK, Commander {name}. We need you to choose your astronaut level which determines the level of difficulty. ")
 
     while True:
-        level = typing_input("\nAre you a Junior, Senior, or Chief?\n ").capitalize().strip()
+        level = typing_input("\nAre you a Junior, Senior, or Chief? ").capitalize().strip()
 
         if level == constants.DIFFICULTY_CONFIG["easy"] or level == constants.DIFFICULTY_CONFIG["medium"] or level == constants.DIFFICULTY_CONFIG["hard"]:
             typing_print(f"Great, we'll start the mission as a {level} astronaut!")

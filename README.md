@@ -137,6 +137,10 @@ Start
 | 
 End\
 
+## Technologies used
+
+This project uses Python, HTML and CSS.
+
 ## Features
 
 ### User Input Validation
@@ -268,13 +272,37 @@ These components collectively define the game's state at any given moment, refle
 
 The game features a scoring system that rewards players for correctly guessing words. As players make correct guesses, their score increases, reflecting their progress and success within the game. This model serves to incentivise players and provides a metric for tracking their performance and achievements.
 
-## Testing
+## Validator Testing
 
-### Fixed bugs
-
-
+## Python
 
 
+## HTML
+
+
+## CSS
+
+
+
+
+### Fixed Bugs
+
+* The typewriter function replaces the need for the print function and was not configured for single line spacing (\n). This was fixed with a simple for loop:
+
+```python
+for character in text:
+    if character == '\n':
+        print("\n")
+    else:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+    time.sleep(0.05)
+```
+
+### Unfixed Bugs
+
+* Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is compete, their text will become embedded in the game script.
+* When text is printed to the terminal, on occasions it will go onto a new line and it doesn’t wrap cleanly. 
 
 ## Deployment to Heroku (working 23 March 2024)
 
