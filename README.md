@@ -2,13 +2,13 @@
 
 ## Overview
 
-‘Blast off!’ is an immersive, educational guessing game for one player with a ‘space and the universe’ theme. Similar to ‘hangman’, the player is presented with a series of underscores that represent a word. They must select letters from the alphabet and guess the word to win. This game is run in a mock terminal deployed by Heroku.
+'Blast off!' is an immersive, educational guessing game for one player with a 'space and the universe' theme. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must select letters from the alphabet and guess the word to win. This game is run in a mock terminal deployed by Heroku.
 
 Screenshot
 
 In recent years, the traditional hangman game has fallen out of favour with many educators due to sensitivity to violence and a lack of educational value. As a former teacher, I wanted to recreate something that could be used by any teacher in the classroom or child at home.
 
-Here is the live version of the game.
+[Here is the live version of the game](https://blast-off-c6220a01b038.herokuapp.com/).
 
 ## How to Play
 
@@ -17,7 +17,7 @@ The game has been designed to be as simple as possible. The player:
 1. Must answer a warm-up question to be selected for the mission.
 2. Chooses a level of difficulty (junior, senior, chief) – the harder the level, the more abstract the word.
 3. Is presented with a series of underscores and must try and guess the word by either selecting individual letters or by 4. writing the word itself.
-5. Has 6 turns to guess the word. By doing so correctly, the player gets a point. If the player doesn’t, the turn is over, the word is revealed and they can play another round.
+5. Has 6 turns to guess the word. By doing so correctly, the player gets a point. If the player doesn't, the turn is over, the word is revealed and they can play another round.
 6. Has the option to continue playing or exit the game.
 
 ## Planning Stage
@@ -26,7 +26,7 @@ The game has been designed to be as simple as possible. The player:
 
 As a user, I want to:
 
-* Be fully immersed in a ‘space and the universe’ experience.
+* Be fully immersed in a 'space and the universe' experience.
 * Choose my level of difficulty.
 * Receive feedback regarding my progress.
 * Easily exit the game.
@@ -45,11 +45,11 @@ To achieve the above, the site will:
 
 * Speak directly to the player in the first person after their name has been captured.
 * Use a typewriter effect on any dialogue which feels like the message is being written at the moment.
-* Clearly show the player’s score, game mode level and used letters.
+* Clearly show the player's score, game mode level and used letters.
 * Use ASCII art to show the stages of lives lost during game mode.
 * Clear the screen on stage changes so not to confuse the player.
 * Handle very carefully user input to avoid any errors.
-* Be easy for the player to exit the game. There will be ‘getting off’ points during a live game and when the game is over.
+* Be easy for the player to exit the game. There will be 'getting off' points during a live game and when the game is over.
 
 ## 'Blast Off!' - Game Flow Chart
 
@@ -97,7 +97,7 @@ IMAGE
 
 ### Press any button to continue
 
-Again, in the spirit of the arcade feel, the classic “press any button to continue” text is achieved by importing a library called ‘getch’ and calling ‘pause’.
+Again, in the spirit of the arcade feel, the classic “press any button to continue” text is achieved by importing a library called 'getch' and calling 'pause'.
 
 IMAGE
 
@@ -109,11 +109,11 @@ IMAGE
 
 ### Clear screen
 
-A simple but key feature is the ‘clear screen’ function. This acts as a signpost for each stage of the game, like a new chapter in a book, and without it, the user will be left with a large amount of text in the terminal. Visually, this is not pretty but it could also confuse the user and take away from the immersive experience.
+A simple but key feature is the 'clear screen' function. This acts as a signpost for each stage of the game, like a new chapter in a book, and without it, the user will be left with a large amount of text in the terminal. Visually, this is not pretty but it could also confuse the user and take away from the immersive experience.
 
 ### Capture name variable
 
-When keeping someone’s attention, it is often said that using the person’s name is the most effective way. The ‘take_name_input’ function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
+When keeping someone's attention, it is often said that using the person's name is the most effective way. The 'take_name_input' function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
 
 ### Warm-up question
 
@@ -125,7 +125,7 @@ All good games normally have a level of mastery as this is what keeps players re
 
 ### Stages of rocket construction
 
-As the user progresses through a turn, they will inevitably guess a letter that doesn’t appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
+As the user progresses through a turn, they will inevitably guess a letter that doesn't appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
 
 ### Game logic
 
@@ -142,7 +142,7 @@ As the user progresses through a turn, they will inevitably guess a letter that 
 
 ### Exit junctions
 
-A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing ‘ABORT’ or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
+A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing 'ABORT' or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
 
 ## Future-Enhancements
 
@@ -238,7 +238,7 @@ for character in text:
 ### Unfixed Bugs
 
 * Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is complete, their text will become embedded in the game script.
-* When text is printed to the terminal, on occasions it will go onto a new line and it doesn’t wrap cleanly.
+* When text is printed to the terminal, on occasions it will go onto a new line and it doesn't wrap cleanly.
 
 ## Deployment to Heroku (working 23 March 2024)
 
