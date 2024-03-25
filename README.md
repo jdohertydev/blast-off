@@ -14,10 +14,10 @@ Here is the live version of the game.
 
 The game has been designed to be as simple as possible. The player:
 
-1. Must answer a warm-up question in order to be selected for the mission.
+1. Must answer a warm-up question to be selected for the mission.
 2. Chooses a level of difficulty (junior, senior, chief) – the harder the level, the more abstract the word.
 3. Is presented with a series of underscores and must try and guess the word by either selecting individual letters or by 4. writing the word itself.
-5. Has 6 turns in order to guess the word. By doing so correctly, the player gets a point. If the player doesn’t, the turn is over, the word is revealed and they can play another round.
+5. Has 6 turns to guess the word. By doing so correctly, the player gets a point. If the player doesn’t, the turn is over, the word is revealed and they can play another round.
 6. Has the option to continue playing or exit the game.
 
 ## Planning Stage
@@ -36,7 +36,7 @@ As a user, I want to:
 The site aims to:
 
 * Never throw an error.
-* Create an arcade like feel using basic black and white.
+* Create an arcade-like feel using basic black and white.
 * Use visuals to bring the text to life.
 
 ### How Will This Be Achieved:
@@ -44,7 +44,7 @@ The site aims to:
 To achieve the above, the site will:
 
 * Speak directly to the player in the first person after their name has been captured.
-* Use a typewriter effect on any dialogues which feels like the message is being written in the moment.
+* Use a typewriter effect on any dialogue which feels like the message is being written at the moment.
 * Clearly show the player’s score, game mode level and used letters.
 * Use ASCII art to show the stages of lives lost during game mode.
 * Clear the screen on stage changes so not to confuse the player.
@@ -91,13 +91,13 @@ The Python code employs several mechanisms to validate user input, ensuring smoo
 
 ### Logo and graphics
 
-* The logo and graphic featured in the splash screen are made in ASCII characters as graphics are not supported in Heroku. This gives the game a classic arcade feeling.
+* The logo and graphic featured in the splash screen are made in ASCII characters as graphics are not supported in Heroku. This gives the game a classic arcade feel.
 
 IMAGE
 
 ### Press any button to continue
 
-Again, in the spirit of the arcade feeling, the classic “press any button to continue” text is achieved importing a library called ‘getch’ and calling ‘pause’.
+Again, in the spirit of the arcade feel, the classic “press any button to continue” text is achieved by importing a library called ‘getch’ and calling ‘pause’.
 
 IMAGE
 
@@ -125,11 +125,11 @@ All good games normally have a level of mastery as this is what keeps players re
 
 ### Stages of rocket construction
 
-As the user progresses through a turn, it’s inevitable that they will guess a letter that doesn’t appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
+As the user progresses through a turn, they will inevitably guess a letter that doesn’t appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
 
 ### Game logic
 
-* Random Word Selection: The game selects a word randomly from a wordlist depending on level chosen.
+* Random Word Selection: The game selects a word randomly from a wordlist depending on the level chosen.
 * Limited Guesses: The user has a limited number of tries (6 turns) to guess the word.
 * Interactive Guessing: Users can guess individual letters or the entire word.
 * Feedback Mechanism: Provides immediate feedback on guesses, informing users whether their guess is correct or incorrect.
@@ -146,7 +146,7 @@ A good game should have exit junctions built into it. Within this game, the play
 
 ## Future-Enhancements
 
-In the future, a leader board could be added to show highest scores. As well as this, a 2-player mode could be created so that friends could choose their own words. Finally, having basic audio play per keyboard stroke would add to the immersive experience.
+In the future, a leaderboard could be added to show the highest scores. As well as this, a 2-player mode could be created so that friends could choose their own words. Finally, having basic audio play per keyboard stroke would add to the immersive experience.
 
 ## Libraries
 
@@ -161,7 +161,7 @@ For this project, these standard libraries were used:
 3rd party libraries used are:
 
 * constants: This is a custom module imported from constants.py. It likely contains predefined constants such as word lists, ASCII art, and configuration settings used throughout the game.
-* getch: This module contains fthe unctionality for pausing the program until the user presses any key to continue.
+* getch: This module contains the functionality for pausing the program until the user presses any key to continue.
 
 ## Data model
 
@@ -214,7 +214,7 @@ No CSS errors are returned when passing through [The W3C CSS Validation Service 
 
 ### Fixed Bugs
 
-* The typewriter function replaces the need for the print function and was not configured for single line spacing (\n). This was fixed with a simple for loop:
+* The typewriter function replaces the need for the print function and was not configured for single-line spacing (\n). This was fixed with a simple for loop:
 
 ```python
 for character in text:
@@ -237,7 +237,7 @@ for character in text:
 
 ### Unfixed Bugs
 
-* Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is compete, their text will become embedded in the game script.
+* Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is complete, their text will become embedded in the game script.
 * When text is printed to the terminal, on occasions it will go onto a new line and it doesn’t wrap cleanly.
 
 ## Deployment to Heroku (working 23 March 2024)
