@@ -148,15 +148,13 @@ def choose_difficulty(name):
     """
     The user chooses level of difficulty.
     Easy, medium or hard.
-    The word register will change in difficulty e.g. easy = moon, hard = constellation
-
+    The word register will change in difficulty e.g. easy = moon, hard = constellation.
     """
-    typing_print(f"OK, Commander {name}. We need you to choose your astronaut level which determines the level of difficulty. ")
 
     while True:
         level = typing_input("\nAre you a Junior, Senior, or Chief? ").capitalize().strip()
 
-        if level == constants.DIFFICULTY_CONFIG["easy"] or level == constants.DIFFICULTY_CONFIG["medium"] or level == constants.DIFFICULTY_CONFIG["hard"]:
+        if level in constants.DIFFICULTY_CONFIG.values():
             typing_print(f"\nGreat, we'll start the mission as a {level} astronaut!")
             time.sleep(2)
             clear_screen()
