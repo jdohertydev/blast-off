@@ -86,7 +86,10 @@ def take_name_input():
         if name.replace(" ", "").isalpha():
             name = name.capitalize()
             typing_print(f"\nThanks, Commander {name}. ")
-            typing_print("One more thing. To make sure you are ready for your mission, we have one more question. ")
+            typing_print(
+                "One more thing. To make sure you are ready for your"
+                " mission, we have one more question. "
+                )
             return name
         else:
             typing_print(f"\n{name} isn't a name on our VIP list.\n")
@@ -198,8 +201,8 @@ def print_game_status(level, score, tries, word_completion):
 def ask_to_play_again(name, word, level, score):
     """
     Prompts user if they want to play another round or exit.
-
     """
+
     while True:
         answer = typing_input("Do you want to play again?\n ").strip().lower()
         if answer == 'yes':
