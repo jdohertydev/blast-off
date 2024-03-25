@@ -104,10 +104,14 @@ def ask_warmup_question(name):
     """
     while True:
         try:
-            user_input = int(typing_input(constants.WARM_UP_QUESTION_CONFIG["question"]))
+            user_input = int(
+                typing_input(constants.WARM_UP_QUESTION_CONFIG["question"])
+            )
 
             if user_input == constants.WARM_UP_QUESTION_CONFIG["answer"]:
-                typing_print(f"\nWell done! You know your stuff, Commander {name}. Your mission will commence in 5...")
+                typing_print(
+                    f"\nWell done! You know your stuff, Commander {name}. "
+                    "Your mission will commence in 5...")
                 time.sleep(1)
                 typing_print("4...")
                 time.sleep(1)
@@ -120,9 +124,13 @@ def ask_warmup_question(name):
                 clear_screen()
                 break
             else:
-                typing_print(f"Hmm, {user_input} isn't quite right, Commander {name}. Try again. ")
+                typing_print(
+                    f"\nHmm, {user_input} isn't quite right, "
+                    f"Commander {name}. Try again. ")
         except ValueError:
-            typing_print(f"Please enter a number as a digit, e.g. 1, Commander {name}. ")
+            typing_print(
+                f"\nPlease enter a number as a digit, "
+                f"e.g. 1, Commander {name}. ")
 
 
 def game_start(name):
