@@ -51,91 +51,11 @@ To achieve the above, the site will:
 * Handle very carefully user input to avoid any errors.
 * Be easy for the player to exit the game. There will be ‘getting off’ points during a live game and when the game is over.
 
-## Game Flow Chart
+## 'Blast Off!' - Game Flow Chart
 
-Start
+!['Blast Off!' - Game Flow Chart](readme-images/blast-off-game-flow-chart.png)
 
-|-----> Show Splash Screen
-|         |
-|         |-----> Show Logo and Rocket Graphic
-|         |
-|         |-----> User presses any key to continue
-|         |
-|         |-----> Clear Screen
-|
-|-----> Show Welcome Message
-|         |
-|         |-----> Typing Print: "Welcome to 'Blast Off'!"
-|         |
-|         |-----> Typing Print: "You have been selected for a very special mission..."
-|
-|-----> Take Name Input
-|         |
-|         |-----> Validate Name Input
-|                   |
-|                   |-----> Typing Input: "What is your name?"
-|                   |
-|                   |-----> If Name is Valid, Proceed
-|                   |
-|                   |-----> If Name is Invalid, Retry
-|
-|-----> Ask Warmup Question
-|         |
-|         |-----> Typing Input: Display Warmup Question
-|         |
-|         |-----> Validate User Input
-|                   |
-|                   |-----> If Correct Answer, Proceed
-|                   |
-|                   |-----> If Incorrect Answer, Retry
-|
-|-----> Game Start
-|         |
-|         |-----> Display Instructions
-|         |
-|         |-----> User Accepts Mission?
-|                   |
-|                   |-----> If Yes, Proceed
-|                   |
-|                   |-----> If No, Exit Game
-|
-|-----> Choose Difficulty
-|         |
-|         |-----> User Chooses Difficulty
-|                   |
-|                   |-----> If Valid Difficulty, Proceed
-|                   |
-|                   |-----> If Invalid Difficulty, Retry
-|
-|-----> Get Word (Not visible to the  user)
-|         |
-|         |-----> Randomly Select Word Based on Difficulty
-|
-|-----> Play Game
-|         |
-|         |-----> Loop Until Game Over or User Quits
-|                   |
-|                   |-----> Display Game Status
-|                   |
-|                   |-----> Take User Guess
-|                   |
-|                   |-----> If Guess is Correct, Update Game Status
-|                   |
-|                   |-----> If Guess is Incorrect, Update Game Status
-|                   |
-|                   |-----> Check Game Over Conditions
-|                             |
-|                             |-----> If Game Over, Ask to Play Again
-|                             |
-|                             |-----> If Continue, Repeat Loop
-|
-|-----> Exit Game
-|         |
-|         |-----> Display Farewell Message
-|         |
-|         |-----> Clear Screen
-| 
-End\
+[Created using [Lucidchart](https://www.lucidchart.com/)]
 
 ## Technologies used
 
@@ -349,5 +269,6 @@ The project was deployed to Heroku using the following steps adapted from [ilyas
 I would like to thank:
 * Kite's YouTube video ['How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w&t=288s), which helped me understand the logic of the game.
 * My mentor for providing feedback along the way and helping with some of the logic of the code.
-* [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku), whos Ultimate Hangman inspired me to challenge myself even further with the game.
+* [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku), whose 'Ultimate Hangman' inspired me to challenge myself even further with the game.
 * ChatGPT, which acted as a 24/7 tutor, explaining why errors were being thrown. It also helped me build some of the sections in the readme file.
+* [Lucidchart](https://www.lucidchart.com/) for the flow chart image.
