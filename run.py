@@ -1,7 +1,8 @@
 # Import the random module for random word selction
 # Import time, sys and os for typing effect and clear
 # Import constants to get random words and ASCII images
-# Import code to enable press any button to continue https://stackoverflow.com/questions/11876618/python-press-any-key-to-exit
+# Import code to enable press any button to continue
+# - https://stackoverflow.com/questions/11876618/python-press-any-key-to-exit
 
 import random
 import time
@@ -73,21 +74,23 @@ def show_welcome_msg():
 def take_name_input():
     """
     Validates that the user enters a name.
+    Check if the input is empty or contains only whitespace
 
     """
     while True:
         name = typing_input("What is your name? ").strip()
-        if not name.strip():  # Check if the input is empty or contains only whitespace
+        if not name.strip():
             typing_print("We need a valid name, Commander. ")
             continue
 
         if name.replace(" ", "").isalpha():
             name = name.capitalize()
-            typing_print(f"\nThanks, Commander {name}. One more thing. To make sure you are ready for your mission, we have one more question. ")
+            typing_print(f"\nThanks, Commander {name}. ")
+            typing_print("One more thing. To make sure you are ready for your mission, we have one more question. ")
             return name
         else:
-            typing_print(f"\n{name} isn't a name on our VIP list, try again using letters from the alpabet.\n")
-            typing_print("Try again using letters from the alpabet.")
+            typing_print(f"\n{name} isn't a name on our VIP list.\n")
+            typing_print("Try again using letters from the alpabet.\n")
             continue
 
 

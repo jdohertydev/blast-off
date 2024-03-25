@@ -276,14 +276,21 @@ The game features a scoring system that rewards players for correctly guessing w
 
 ## Python
 
+Using [CI Python Linter](https://pep8ci.herokuapp.com/):
+
+run.py
+
+constants.py
+
 
 ## HTML
+
+No HTML errors are returned when passing through [The W3C Markup Validation Service](https://validator.w3.org/nu/?doc=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F).
 
 
 ## CSS
 
-
-
+No CSS errors are returned when passing through [The W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
 ### Fixed Bugs
 
