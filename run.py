@@ -154,7 +154,7 @@ def choose_difficulty(name):
         level = typing_input("\nAre you a Junior, Senior, or Chief? ").capitalize().strip()
 
         if level == constants.DIFFICULTY_CONFIG["easy"] or level == constants.DIFFICULTY_CONFIG["medium"] or level == constants.DIFFICULTY_CONFIG["hard"]:
-            typing_print(f"Great, we'll start the mission as a {level} astronaut!")
+            typing_print(f"\nGreat, we'll start the mission as a {level} astronaut!")
             time.sleep(2)
             clear_screen()
             return level
