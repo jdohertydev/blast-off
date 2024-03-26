@@ -57,7 +57,7 @@ To achieve the above, the site will:
 
 [Created using [Lucidchart](https://www.lucidchart.com/)]
 
-## Technologies used
+## Technologies Used
 
 This project uses Python, HTML and CSS.
 
@@ -89,45 +89,45 @@ The Python code employs several mechanisms to validate user input, ensuring smoo
      - Strings matching the target word's length and consisting of alphabetical characters are treated as word guesses.
      - If the input doesn't meet these criteria, an error message is displayed, and the user is prompted to try again.
 
-### Logo and graphics
+### Logo and Graphics
 
 * The logo and graphic featured in the splash screen are made in ASCII characters as graphics are not supported in Heroku. This gives the game a classic arcade feel.
 
 IMAGE
 
-### Press any button to continue
+### Press Any Button to Continue
 
 Again, in the spirit of the arcade feel, the classic “press any button to continue” text is achieved by importing a library called 'getch' and calling 'pause'.
 
 IMAGE
 
-### Typewriter effect
+### Typewriter Effect
 
 A current feature of Chat GPT and numerous classic arcade games, the typewriter effect is used to simulate that mission control is directly talking to the player. This is one of the many ways the game immerses the player within it.
 
 IMAGE
 
-### Clear screen
+### Clear Screen
 
 A simple but key feature is the 'clear screen' function. This acts as a signpost for each stage of the game, like a new chapter in a book, and without it, the user will be left with a large amount of text in the terminal. Visually, this is not pretty but it could also confuse the user and take away from the immersive experience.
 
-### Capture name variable
+### Capture Name Variable
 
 When keeping someone's attention, it is often said that using the person's name is the most effective way. The 'take_name_input' function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
 
-### Warm-up question
+### Warm-up Question
 
 To generate more player engagement, a warm-up question is asked before the player starts the game. Hopefully, the player already knows the answer and will feel even more immersed in the experience.
 
-### Level of user difficulty
+### Level of User Difficulty
 
 All good games normally have a level of mastery as this is what keeps players returning. This game has 3 basic levels (easy, medium and hard) but uses different nomenclature connected to space travel (Junior, Senior and Chief). This feeds back into the primary objective of making this an immersive game. 
 
-### Stages of rocket construction
+### Stages of Rocket Construction
 
 As the user progresses through a turn, they will inevitably guess a letter that doesn't appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
 
-### Game logic
+### Game Logic
 
 * Random Word Selection: The game selects a word randomly from a wordlist depending on the level chosen.
 * Limited Guesses: The user has a limited number of tries (6 turns) to guess the word.
@@ -140,7 +140,7 @@ As the user progresses through a turn, they will inevitably guess a letter that 
 * Game Status Display: Continuously displays the game status, including the current score, remaining tries, and the word completion status.
 * Game Outcome Notification: Notifies the user of the game outcome, congratulating them for successful guesses or informing them of failure.
 
-### Exit junctions
+### Exit Junctions
 
 A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing 'ABORT' or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
 
@@ -163,11 +163,9 @@ For this project, these standard libraries were used:
 * constants: This is a custom module imported from constants.py. It likely contains predefined constants such as word lists, ASCII art, and configuration settings used throughout the game.
 * getch: This module contains the functionality for pausing the program until the user presses any key to continue.
 
-## Data model
+## Blast Off Game Data Models
 
 Overall, the game utilises 4 data models to manage the game's logic, user interaction, and state throughout the gameplay experience.
-
-## Blast Off Game Data Models
 
 ### 1. Word List Model
 
@@ -211,11 +209,11 @@ No HTML errors are returned when passing through [The W3C Markup Validation Serv
 
 No CSS errors are returned when passing through [The W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
-### Manual testing
+### Manual Testing
 
 Throughout the various stages of development, I extensively tested this game and tried to get into the mindset of the user. I purposely set out to create errors by answering questions unconventionally as well as getting peers to review the game to offer a different user experience. Also, the game was tested in multiple browsers and on multiple devices. By triangulating my testing methods, I believe I have made a robust game that won't crash and disrupt the user experience.
 
-### Input validation
+### Input Validation
 
 | Function Name                | How Validation is Dealt With                                                                                                     |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -224,8 +222,6 @@ Throughout the various stages of development, I extensively tested this game and
 | game_start(name)             | The user's input to accept the terms of the mission is validated to ensure it is either 'yes' or 'no'.                           |
 | choose_difficulty(name)      | The user's input for selecting the difficulty level is validated to ensure it matches one of the predefined difficulty levels ('Junior', 'Senior', or 'Chief'). |
 | play_game(name, word, level, score=0) | The user's input for guessing letters or words is validated to ensure it meets certain criteria: For single-letter guesses, it is checked if the input is a letter and if it has not been guessed before. For word guesses, it is checked if the input has the same length as the target word and consists of alphabetic characters only. |
-
-
 
 ### Fixed Bugs
 
