@@ -267,7 +267,7 @@ for character in text:
 
 ### Unfixed Bugs
 
-* Although not a bug, as a result of the typewriter effect, if the user starts typing before typewriter text is complete, their text will become embedded in the game script.
+* Although not a bug, as a result of the typewriter effect, if the user starts typing before the typewriter text is complete, their text will become embedded in the game script.
 * When text is printed to the terminal, on occasions it will go onto a new line and it doesn't wrap cleanly.
 
 ## Deployment to Heroku (working 23 March 2024)
