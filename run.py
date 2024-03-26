@@ -88,8 +88,8 @@ def take_name_input():
             typing_print(f"\nThanks, Commander {name}. ")
             typing_print(
                 "One more thing. To make sure you are ready for your"
-                "\n mission, we have one more question. "
                 )
+            typing_print("\nmission, we have one more question. ")
             return name
         else:
             typing_print(f"\n{name} isn't a name on our VIP list.\n")
