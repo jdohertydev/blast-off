@@ -88,7 +88,7 @@ def take_name_input():
             typing_print(f"\nThanks, Commander {name}. ")
             typing_print(
                 "One more thing. To make sure you are ready for your"
-                " mission, we have one more question. "
+                "\n mission, we have one more question. "
                 )
             return name
         else:

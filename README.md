@@ -211,7 +211,7 @@ No HTML errors are returned when passing through [The W3C Markup Validation Serv
 
 No CSS errors are returned when passing through [The W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
-## Manual testing
+### Manual testing
 
 Throughout the various stages of development, I extensively tested this game and tried to get into the mindset of the user. I purposely set out to create errors by answering questions unconventionally as well as getting peers to review the game to offer a different user experience. Also, the game was tested in multiple browsers and on multiple devices. By triangulating my testing methods, I believe I have made a robust game that won't crash and disrupt the user experience.
 
