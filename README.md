@@ -215,6 +215,18 @@ No CSS errors are returned when passing through [The W3C CSS Validation Service 
 
 Throughout the various stages of development, I extensively tested this game and tried to get into the mindset of the user. I purposely set out to create errors by answering questions unconventionally as well as getting peers to review the game to offer a different user experience. Also, the game was tested in multiple browsers and on multiple devices. By triangulating my testing methods, I believe I have made a robust game that won't crash and disrupt the user experience.
 
+### Input validation
+
+| Function Name                | How Validation is Dealt With                                                                                                     |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| take_name_input()            | The user's name input is validated to ensure it is not empty and contains only alphabetic characters.                         |
+| ask_warmup_question(name)    | The user's input to the warm-up question is validated to ensure it is a digit.                                                   |
+| game_start(name)             | The user's input to accept the terms of the mission is validated to ensure it is either 'yes' or 'no'.                           |
+| choose_difficulty(name)      | The user's input for selecting the difficulty level is validated to ensure it matches one of the predefined difficulty levels ('Junior', 'Senior', or 'Chief'). |
+| play_game(name, word, level, score=0) | The user's input for guessing letters or words is validated to ensure it meets certain criteria: For single-letter guesses, it is checked if the input is a letter and if it has not been guessed before. For word guesses, it is checked if the input has the same length as the target word and consists of alphabetic characters only. |
+
+
+
 ### Fixed Bugs
 
 * The typewriter function replaces the need for the print function and was not configured for single-line spacing (\n). This was fixed with a simple for loop:
@@ -228,9 +240,6 @@ for character in text:
         sys.stdout.flush()
     time.sleep(0.05)
 ```
-
-* Validation using Linter check.
-
 * Issue with Game Mode Displaying as "0":
    * The game mode appeared as "0" when the player selected 'play again'. This occurred because the play_game function was called with the level variable as the first argument instead of the name variable. This mistake was made in the ask_to_play_again function where the play_game function was invoked with the parameters in the wrong order.
    * To resolve this issue, the play_game function was called with the correct parameters. Specifically, the name variable was passed as the first argument, followed by the word, level, and score variables in the correct order.
