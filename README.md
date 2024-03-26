@@ -4,7 +4,8 @@
 
 'Blast off!' is an immersive, educational guessing game for one player with a 'space and the universe' theme. Similar to 'hangman', the player is presented with a series of underscores that represent a word. They must select letters from the alphabet and guess the word to win. This game is run in a mock terminal deployed by Heroku.
 
-Screenshot
+![Am I responsive?](readme-images/am-i-responsive.png)
+
 
 In recent years, the traditional hangman game has fallen out of favour with many educators due to sensitivity to violence and a lack of educational value. As a former teacher, I wanted to recreate something that could be used by any teacher in the classroom or child at home.
 
@@ -93,19 +94,19 @@ The Python code employs several mechanisms to validate user input, ensuring smoo
 
 * The logo and graphic featured in the splash screen are made in ASCII characters as graphics are not supported in Heroku. This gives the game a classic arcade feel.
 
-IMAGE
+![Logo and Graphics](readme-images/blast-off-logo-and-graphic.png)
 
 ### Press Any Button to Continue
 
 Again, in the spirit of the arcade feel, the classic “press any button to continue” text is achieved by importing a library called 'getch' and calling 'pause'.
 
-IMAGE
+![Press Any Button To Continue](readme-images/press-any-key-to-continue.png)
 
 ### Typewriter Effect
 
 A current feature of Chat GPT and numerous classic arcade games, the typewriter effect is used to simulate that mission control is directly talking to the player. This is one of the many ways the game immerses the player within it.
 
-IMAGE
+![Typewriter Effect](readme-images/typewriter.gif)
 
 ### Clear Screen
 
@@ -115,36 +116,38 @@ A simple but key feature is the 'clear screen' function. This acts as a signpost
 
 When keeping someone's attention, it is often said that using the person's name is the most effective way. The 'take_name_input' function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
 
-IMAGE
+![Capture Name Variable](readme-images/name.png)
 
 ### Warm-up Question
 
 To generate more player engagement, a warm-up question is asked before the player starts the game. Hopefully, the player already knows the answer and will feel even more immersed in the experience.
 
+![Warm-up Question](readme-images/warm-up-question.png)
+
 ### Instructions
 
 The user sees the instructions, however they are presented in a 'Mission Objective' to keep the user immersed.
 
-IMAGE
+![Instructions](readme-images/instructions.png)
 
 ### Level of User Difficulty
 
 All good games normally have a level of mastery as this is what keeps players returning. This game has 3 basic levels (easy, medium and hard) but uses different nomenclature connected to space travel (Junior, Senior and Chief). This feeds back into the primary objective of making this an immersive game. 
 
-IMAGE
+![Level of User Difficulty](readme-images/difficulty.png)
 
 ### Stages of Rocket Construction
 
 As the user progresses through a turn, they will inevitably guess a letter that doesn't appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
 
-IMAGE
+![Stages of Rocket Construction](readme-images/game-mode.png)
 
 ### Game Logic
 
 * Random Word Selection: The game selects a word randomly from a wordlist depending on the level chosen.
 * Limited Guesses: The user has a limited number of tries (6 turns) to guess the word.
 * Interactive Guessing: Users can guess individual letters or the entire word.
-* Feedback Mechanism: Provides immediate feedback on guesses, informing users whether their guess is correct or incorrect.
+* Feedback Mechanism: Provides immediate feedback on guesses, informing users whether their guess is correct or incorrect in a friendly manner.
 * Dynamic Progress Display: Displays the progress of the game through ASCII art, representing the stages of rocket construction.
 * Game Over Handling: Handles game over conditions, such as running out of guesses or successfully guessing the word.
 * Scoring System: Provides a scoring system where users earn points for successfully guessing the word.
@@ -156,7 +159,7 @@ IMAGE
 
 A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing 'ABORT' or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
 
-Image
+![Exit Junctions](readme-images/exit.png)
 
 ## Future-Enhancements
 
@@ -210,9 +213,9 @@ The game features a scoring system that rewards players for correctly guessing w
 
 Using [CI Python Linter](https://pep8ci.herokuapp.com/):
 
-run.py
+![CI Python Linter - run.py](readme-images/linter-test-run.png):
 
-constants.py
+![CI Python Linter - constants.py](readme-images/linter-test-constants.png):
 
 ### HTML
 
@@ -222,9 +225,11 @@ No HTML errors are returned when passing through [The W3C Markup Validation Serv
 
 No CSS errors are returned when passing through [The W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
-## Lighthouse
+### Lighthouse
 
+The site scored 99 for performance, 100 for accessibility, 100 for best practice and 100 for SEO.
 
+![CLighthouse](readme-images/lighthouse.png):
 
 ### Manual Testing
 
