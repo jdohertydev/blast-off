@@ -115,17 +115,29 @@ A simple but key feature is the 'clear screen' function. This acts as a signpost
 
 When keeping someone's attention, it is often said that using the person's name is the most effective way. The 'take_name_input' function does this early on in the program and uses it in the script throughout the game using f-strings and `{name}`. 
 
+IMAGE
+
 ### Warm-up Question
 
 To generate more player engagement, a warm-up question is asked before the player starts the game. Hopefully, the player already knows the answer and will feel even more immersed in the experience.
+
+### Instructions
+
+The user sees the instructions, however they are presented in a 'Mission Objective' to keep the user immersed.
+
+IMAGE
 
 ### Level of User Difficulty
 
 All good games normally have a level of mastery as this is what keeps players returning. This game has 3 basic levels (easy, medium and hard) but uses different nomenclature connected to space travel (Junior, Senior and Chief). This feeds back into the primary objective of making this an immersive game. 
 
+IMAGE
+
 ### Stages of Rocket Construction
 
 As the user progresses through a turn, they will inevitably guess a letter that doesn't appear in the word. In this case, part of the rocket is constructed using ASCII text. There are 6 stages of construction which represent the number of tries the user has. Without this ASCII imagery, the game would be quite static, and the user could get bored more quickly.
+
+IMAGE
 
 ### Game Logic
 
@@ -143,6 +155,8 @@ As the user progresses through a turn, they will inevitably guess a letter that 
 ### Exit Junctions
 
 A good game should have exit junctions built into it. Within this game, the player can exit in multiple scenarios such as during a turn by typing 'ABORT' or when a turn is complete. Also, the text used in the exit game function uses a countdown script from 3 to 1, again keeping in the theme of lexis used in space travel.
+
+Image
 
 ## Future-Enhancements
 
@@ -204,10 +218,13 @@ constants.py
 
 No HTML errors are returned when passing through [The W3C Markup Validation Service](https://validator.w3.org/nu/?doc=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F).
 
-
 ### CSS
 
 No CSS errors are returned when passing through [The W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fblast-off-c6220a01b038.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
+
+## Lighthouse
+
+
 
 ### Manual Testing
 
