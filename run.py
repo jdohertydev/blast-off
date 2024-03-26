@@ -111,15 +111,15 @@ def ask_warmup_question(name):
             if user_input == constants.WARM_UP_QUESTION_CONFIG["answer"]:
                 typing_print(
                     f"\nWell done! You know your stuff, Commander {name}. "
-                    "Your mission will commence in 5...")
+                    "Your mission will commence in \n5...")
                 time.sleep(1)
-                typing_print("4...")
+                typing_print("\n4...")
                 time.sleep(1)
-                typing_print("3...")
+                typing_print("\n3...")
                 time.sleep(1)
-                typing_print("2...")
+                typing_print("\n2...")
                 time.sleep(1)
-                typing_print("1...")
+                typing_print("\n1...")
                 time.sleep(1)
                 clear_screen()
                 break
