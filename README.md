@@ -280,3 +280,5 @@ I would like to thank:
 * [ilyasolgun11](https://github.com/ilyasolgun11/hangman/tree/main?tab=readme-ov-file#deployment-to-heroku), whose 'Ultimate Hangman' inspired me to challenge myself even further with the game.
 * ChatGPT, which acted as a 24/7 tutor, explaining why errors were being thrown. It also helped me build some of the sections in the readme file.
 * [Lucidchart](https://www.lucidchart.com/) for the flow chart image.
+* Logo creator
+* ASCII rocket art

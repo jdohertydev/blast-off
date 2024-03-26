@@ -167,6 +167,7 @@ def choose_difficulty(name):
 
     while True:
         level = typing_input(
+            f"We need to know what level you are, Commander {name}."
             "\nAre you a Junior, Senior, or Chief? ").capitalize().strip()
 
         if level in constants.DIFFICULTY_CONFIG.values():
@@ -312,11 +313,11 @@ def exit_game(name):
         "but this is where we go our separate ways. ")
     typing_print(
         f"Goodbye, Commander {name}. "
-        "This message will self-destruct in 3...")
+        "This message will self-destruct in \n3...")
     time.sleep(1)
-    typing_print("2...")
+    typing_print("\n2...")
     time.sleep(1)
-    typing_print("1...")
+    typing_print("\n1...")
     time.sleep(1)
     clear_screen()
     return None
