@@ -146,12 +146,12 @@ def game_start(name):
             f"Do you accept the terms of this mission, "
             f"Commander {name}? ").lower().strip()
 
-        if answer == 'yes':
+        if answer in ['yes', 'y']:
             typing_print("\nGreat, let's get you spacesuited up!")
             time.sleep(2)
             clear_screen()
             break
-        elif answer == 'no':
+        elif answer in ['no', 'n']:
             exit_game(name)
         else:
             typing_print(f"\nWe need a yes or no answer, Commander {name}. ")
@@ -218,11 +218,11 @@ def ask_to_play_again(name, word, level, score):
     """
 
     while True:
-        answer = typing_input("Do you want to play again?\n ").strip().lower()
-        if answer == 'yes':
+        answer = typing_input("\nDo you want to play again? ").strip().lower()
+        if answer in ['yes', 'y']:
             clear_screen()
             return play_game(name, word, level, score)
-        elif answer == 'no':
+        elif answer in ['no', 'n']:
             clear_screen()
             exit_game(name)
             return score
