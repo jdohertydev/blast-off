@@ -304,3 +304,4 @@ I would like to thank:
 * [Lucidchart](https://www.lucidchart.com/) for the flow chart image.
 * [Text to ASCII Art Generator (TAAG)](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) for the 'Blast Off!' logo.
 * [ROCKETS - ASCII ART](https://ascii.co.uk/art/rockets) for the rocket used during the game.
+* A fellow Code Institute student, Dajana Isbaner, for providing peer feedback which I took on board.
