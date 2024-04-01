@@ -36,7 +36,7 @@ As a user, I want to:
 
 The site aims to:
 
-* Never throw an error.
+* Never throw an error from which user cannot recover.
 * Create an arcade-like feel using basic black and white.
 * Use visuals to bring the text to life.
 

@@ -1,14 +1,13 @@
 # Import the random module for random word selction
-# Import time, sys and os for typing effect and clear
-# Import constants to get random words and ASCII images
-# Import code to enable press any button to continue
-# - https://stackoverflow.com/questions/11876618/python-press-any-key-to-exit
-
 import random
+# Import time, sys and os for typing effect and clear
 import time
 import sys
 import os
+# Import constants to get random words and ASCII images
 import constants
+# Import code to enable press any button to continue
+# - https://stackoverflow.com/questions/11876618/python-press-any-key-to-exit
 from getch import pause
 
 
@@ -248,7 +247,7 @@ def play_game(name, word, level, score=0):
 
     while not guessed and tries > 0:
 
-        guess = typing_input(
+        guess = input(
             "Please guess a letter or word or type ABORT "
             "to end the mission.\n ").upper().strip()
         if guess == "ABORT":
@@ -313,13 +312,14 @@ def exit_game(name):
         "but this is where we go our separate ways. ")
     typing_print(
         f"Goodbye, Commander {name}. "
-        "This message will self-destruct in \n3...")
+        "This message will self-destruct in: \n3...")
     time.sleep(1)
     typing_print("\n2...")
     time.sleep(1)
     typing_print("\n1...")
     time.sleep(1)
     clear_screen()
+    typing_print("\nClick 'RUN PROGRAM' to play again.\n")
     return None
 
 
